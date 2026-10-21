@@ -9,7 +9,6 @@ BASELINE_LAM = 1e5
 MIN_SNR = 5.0        
 
 def load_spectrum(path):
-    """Read two columns of numbers; skip header/comment lines."""
     rows = []
     for line in open(path, errors="ignore"):
         parts = line.replace(",", " ").split()
