@@ -1,0 +1,69 @@
+paper_id,sample_id,peak_cm1,field_checked,verdict,correct_value,comment
+CAL001,xtal_large,2500,peak;label;laser;conditions,ok,,"Table II p.189 (PDF p.8) serial 11: 2500, A1+E2(i), calc 1086+1434, IR 2545; second-order line kept unassigned; Hg 2536.5 A excitation (p.4-5)"
+CAL001,xtal_large,864,peak;label;laser;conditions,ok,,"Table II p.189 serial 2: 864, E2(i)+E2(l), calc 712+156; unassigned correct"
+CAL002,S1,2522,peak;label;laser,ok,,"Table I p.199 (PDF p.17): 2522 'Indication only', 1086+1436; unassigned combination line; Hg 2536.5 A excitation"
+CAL002,S1,155,peak;label;laser,ok,,"p.186 Sec. 4 (PDF p.4): five principal shifts 155, 282, 712, 1086, 1436; paper calls the two smallest external (translatory/rotatory) vibrations without saying which is which, so Eg(T) label is by position; acceptable"
+CAL002,S1,1025,peak;label,ok,,"Table II p.201 (PDF p.19): 1025 'Diffuse and strong', 875+155; unassigned"
+CAL002,S1,1795,peak;label,ok,,"Table I p.199: 1795 'Sharp but weak', 1086+712; unassigned"
+CAL003,16B,1086,peak;fwhm;uncertainty;conditions;label;laser,ok,,"Table 1 p.584 (PDF p.4, 400 dpi): 16B 15.0 mol% v1 1086 / 8.6; +/-1 cm-1 from table footnote; 488.0 nm Ar+ (p.582 methods). Whole Table 1 re-read: all 54 rows match"
+CAL003,Echinometra_teeth,152,peak;uncertainty;fwhm;conditions;label,ok,,"Table 2 p.587 (PDF p.7): Echinometra lucanter (teeth) 13.3 mol% T 152(2), halfwidth im -> fwhm blank, unc 2 correct. Whole Table 2 re-read: all 52 rows match"
+CAL003,10C,1086,peak;fwhm;conditions;label,ok,,Table 1: 10C 5.7 mol% v1 1086 / 6.5
+CAL003,25A,1088,peak;fwhm;conditions;label,ok,,Table 1: 25A 25(1) mol% v1 1088 / 12.4
+CAL004,Fig2_calcite,714,peak;label;laser;conditions,ok,,"Fig. 2 calcite panel (PDF p.6): printed labels 158, 291, 714; P,T of the panel not stated (conditions say so); 488 nm (text 'laser excitation power of 75 mW (488 nm)'); nu4 by reference"
+CAL005,white_coral,285,peak;fwhm;conditions;label;laser,ok,,"Table 1 p.643 (PDF p.3, 400 dpi): White coral (C. secundum) L 285 (23.1); 488.0 nm Ar+ (Methods p.641); ~10 mol% Mg from abstract. Whole Table 1 re-read: all 22 rows match"
+CAL005,white_coral,716,peak;fwhm;label,ok,,Table 1: White coral v4 716 (13.4)
+CAL006,travertine,157,peak;label;laser,ok,,"p.3 Results and Fig. 3 caption (p.4): calcite (Cc) 1086, 712, 281 and 157 cm-1 recorded at 785 nm; no assignment in paper so reference label correct"
+CAL007,specB,1085,peak;rel_intensity;laser;label,ok,,"p.255 (PDF p.3): peaks at 281, 713 and 1085 'in each spectrum'; p.256: 1085 normalised to 100, corrected spectrometer-B 31/11; spectrometer-B laser not stated in this paper (described in Tsujimura et al. 2004) so blank laser_nm is correct"
+CAL008,outer_calcite,1085,peak;label;laser;sample,ok,,"p.3763 Sec. 3.1: calcite identified by T 155, L 282, v4 711, v1 1085 (Fig. 2a); Fig. 2a spectra extracted from scan1a, Table 1 lists scan1a at 785 nm"
+CAL009,Cal,1342,peak;label;laser,ok,,"Author ms p.5 (PDF p.6) lines 95-99: calcite nu3 asymmetric stretching 'observed at 1440, 1405, 1378, 1361 and 1342'; kept unassigned with caution note; 633 nm He-Ne (p.4)"
+CAL009,Cal,1440,peak;label;laser,ok,,Author ms p.5 line 99: 1440 listed first among calcite (CO3) asymmetric stretching modes -> nu3 (paper)
+CAL010,xtal_300K,1436.5,peak;width;conditions;label,ok,,"SI Table S1 (printed p.2, PDF p.3): Eg mode 5 exp 1436.5, gamma_exp 3.8, T=300 K; laser not in the SI (main article not on disk) so blank is correct"
+CAL010,xtal_80K,1067.4,peak;width;conditions;label,ok,,"SI Table S3 (printed p.8, PDF p.9): '#' A1g exp 1067.4, gamma_exp 1.7, T=80 K; no paper assignment in the SI, nu1(13C) by reference within its 5 cm-1 tolerance"
+CAL011,MgCa0.5_dot1,1091,peak;label;laser;conditions,ok,,"p.3 Results: Fig. 1 skeleton raised at mMg/Ca 0.5; dot #1 calcite peaks ~159, ~284, ~717, ~1091; 532 nm, 300 l/mm grating (p.2 Methods); approximate values noted"
+CAL012,MgCc_6,282.99,peak;fwhm;conditions;label;laser,ok,,Table 3 (preprint PDF p.34): MgCc_6 4 mol% L 282.99 / 14.18; Raman at 514.5 nm Renishaw M-1000 (p.6 l.140-141; 532 nm only for the Fig. 9 inset). Whole Table 3 re-read: all 120 rows match
+CAL012,MgCc_14,159.23,peak;fwhm;conditions;label,ok,,Table 3: MgCc_14 11.6 mol% T 159.23 / 12.5
+CAL012,MgCc_12,713.84,peak;fwhm;conditions;label,ok,,Table 3: MgCc_12 9.5 mol% v4 713.84 / 10.77
+CAL012,MgCc_18,160.10,peak;fwhm;conditions;label,ok,,Table 3: MgCc_18 14.5 mol% T 160.10 / 17.64
+CAL013,PCpaste_fibre,1086,peak;label;laser;conditions,ok,,"Table 7 (PDF p.16, printed p.15): optical fibre system 1086, v1 of CO3 in calcite/aragonite; fibre system 514.5 nm, 18.1 mW (Sec. 2.3); calcite/aragonite overlap noted"
+CAL013,CaCO3_bench,1436,peak;label;laser;conditions,ok,,"Table 5 (PDF p.13, printed p.12): bench-mounted 1436, v3 asymmetric stretching; Renishaw inVia 514.5 nm, 4.1 mW at sample, 50x (Sec. 2.2)"
+CAL014,C13_1pct,151,peak;label;laser;conditions,ok,,"ESI p.2 Fig. S8a printed label '151 cm-1' (lattice mode 2) for natural-abundance calcite; 633 nm stated in ESI text (note: the laser source is named 'HPNIR830' there, but the text says 633 nm); paper says only 'lattice mode', so Eg(T) is by position although assignment_source=paper"
+CAL015,F1W,1085,peak;label;laser,ok,,"p.9 Raman Spectroscopy: F1W peaks 150, 280, 712, 1000, 1085, 1600; 1085 = symmetric stretching; white part determined to be calcite; Horiba HR-Evolution 532 nm (p.2)"
+CAL016,blue_1064nm,712,peak;label;laser,ok,,"Table 1 (p.5): v4(CO3) in calcite, 1064 nm column 712. Whole calcite part of Table 1 (T, L, v4, v1, 2v2) re-read: all 17 table rows match"
+CAL016,blue_532nm,712,peak;label;laser,ok,,Table 1 (p.5): 532 nm column v4 712
+CAL017,SA01_acq1,280,peak;label;laser,ok,,"SI Table S1 (SI PDF p.13, printed 12/15): SA01-0.3 M Cc lattice vibration 280; laser 532.05 nm (main paper p.9 Methods)"
+CAL017,SA01_acq1,710,peak;label,ok,,SI Table S1: SA01-0.3 M Cc in-plane bending v4 710
+CAL018,d2_operculum_002,1087.56,peak;fwhm;input;plot;label;laser,ok,,"Input conv/d2_operculum_002.txt identical to Dryad operculum_002_Acq1.txt (2265 pts); plot shows weak nu1 marked at 1087.6 (band centroid 1088.3, pixel step 1.1 cm-1, within fit error); Si line 521.8 narrow; 785 nm; uncalibrated axis noted"
+CAL018,d6_parietal4v2,1089.48,peak;fwhm;input;plot;label;laser,ok,,"Input identical to Dryad 6dayparietal4v2.txt (3174 pts); flat-topped nu1 1088.3-1091.6, half-max centroid 1089.49 = fit; plot clean; on glass coverslip (no Si line in this spectrum), axis offset note inherited from 2-day session"
+CAL019,calcite_amb,1751,peak;label;laser;conditions,ok,,"Table 2 (p.585): calcite overtone 1751 at 1 bar, 25 C (Fig. 3b label 2v2 1751); 532.05 nm (p.2 methods); table note says calcite data are from Farsang et al. 2018 (already in notes)"
+CAL020,ccI,160,peak;uncertainty;conditions;label;laser,ok,,"p.3 Sec. 3.1: cc-I 'two external modes at about 160 and 280 cm-1, and one v4 at about 720'; 532 nm Nd:YAG (p.3); approximate value with 10 cm-1 uncertainty and high-P conditions clearly flagged"
+CAL021,calcite_Mexico,1086.0,peak;uncertainty;label;laser,ok,,"Table 2 (p.925): calcite v1 1086.0 +- 0.8 (mean +- SD); 532 nm, 10 mW (p.924 methods)"
+CAL022,G_berkeleyi,281.77,peak;fwhm;input;plot;label;laser,ok,,Input conv/G_berkeleyi.txt identical to Zenodo gb.txt (1021 pts); plot fit is clean; smoothed half-max centroid of L band 282.1 (step 2.1 cm-1) agrees with fit 281.77; Table 1 gives 284.3 for the same species (kept as separate table row); 514.5 nm (p.4)
+CAL022,G_berkeleyi,284.3,peak;label;laser,ok,,Table 1 (p.10): Glossobalanus berkeleyi L 284.3 (12.4 mol%); whole Table 1 (18 values) re-read: all match
+CAL022,P_graveolens,1086.4,peak;label,ok,,Table 1 (p.10): Protoglossus graveolens v1 1086.4 (1.67 mol%)
+CAL022,S_pusillus,153.92,peak;fwhm;input;plot;label,ok,,Input identical to Zenodo sp.txt; smoothed half-max centroid of T band 153.9 = fit 153.92
+CAL023,Limestone,1087,peak;fwhm;label;laser,ok,,"Table 1 (p.4): Limestone v1 1087 (no SD printed, so uncertainty blank); Table 2: v1 FWHM 2 +- 0.1; 532 nm, 1800 gr/mm (p.8). Tables 1 and 2 re-read: all 28 position/FWHM pairs match"
+CAL023,Chalk,281.7,peak;uncertainty;fwhm;label,ok,,Table 1: Chalk L 281.7 +- 0.1; Table 2: L FWHM 9.5 +- 0.3
+CAL023,TS_238,1086.4,peak;uncertainty;fwhm;label,ok,,Table 1: TS 238 v1 1086.4 +- 0.5; Table 2: 3.2 +- 0.2
+CAL023,YIF_E17,281.1,peak;uncertainty;fwhm;label,ok,,Table 1: YIF E17 L 281.1 +- 0.5; Table 2: 13.2 +- 2
+CAL024,CAMP_1,281.9,peak;fwhm;label;laser;sample,ok,,"Table 2 (p.2865): CAMP 1 L 281.9 (int 0.29, area 4.38 in notes); Table 4 (p.2869): L FWHM 11.8; 785 nm (p.2862). Tables 2 and 4 re-read: all 72 position/FWHM pairs match; sample descriptions match Table 1"
+CAL024,PLEC,713.0,peak;fwhm;label,ok,,Table 2: PLEC v4 713.0; Table 4: 5.1
+CAL024,MS,1086.6,peak;fwhm;label,ok,,Table 2: MS v1 1086.6; Table 4: 4.6
+CAL024,WHL,276.4,peak;fwhm;label,ok,,Table 2: WHL L 276.4; Table 4: 21.9
+CAL025,calcite_film,1758,peak;label;assignment_source;laser,ok,,"ESI Table S5 (p.S6): calcite 1758 'Combination bands (v1 + v4)'; main text p.7 same; row already has mode_label 2nu2 by position, assignment_source=reference and the paper's v1+v4 notation in notes; 532 nm (p.3)"
+CAL026,expA_grain,1084,peak;label;laser;sample,ok,,"p.9: experiment A (NaClO4 2 M, untreated grain) petals, Fig. 6C: calcite bands at 1084, 711 and 280 cm-1; 785 nm, 30 mW, 5 x 20 s (p.4)"
+CAL026,expC_pellet,711,peak;label;sample,ok,,"p.9: experiment C (pellet, perchlorate 2 M), Fig. 5C: calcite bands at 280, 711 and 1084; 705 (aragonite) within the 711 broad peak noted"
+CAL027,Hiraodai_ls,1065,peak;label;laser;sample,ok,,"p.3 Results: 'peaks at 1065 and 1086 cm-1 are, respectively, 12C16O16O18O and 12C16O3 (Gillet et al. 1996)'; paper assigns 18O so nu1(18O) (paper_only label) is correct; Hiraodai crystalline limestone, 532 nm DPSS (p.2)"
+CAL028,Cal_crystal,713,peak;label;laser;conditions,ok,,Accepted ms PDF p.16 (printed 15): calcite and aragonite differ in the bending mode at 706 and 713 cm-1 respectively; 785 nm Ti:sapphire (p.9); in situ in mother solution
+CAL029,SP_coverslip,715,peak;label;laser;sample,ok,,"p.7 (render): 'main v1 band at 1089, a small v4 band at 715, and the lattice vibration bands at 156 and 262 cm-1' for SP precipitate (Suppl. Fig. S3a); 532 nm WITec"
+CAL030,S9,257.0,peak;fwhm;input;plot;label;laser,ok,,"Input _work/CAL030/S9.csv identical to NeXus entry 'Figure5and6 (Calcite) S9' (2095 pts, 785 nm in instrument/beam_incident); row equals fit_S9.csv; plot shows this component sits on the low side of Eg(L) 275.8 where the baseline leaves a broad hump, so it is a shoulder/background residual rather than a calcite band (unassigned label correct; note added)"
+CAL030,S6,1434.54,peak;fwhm;input;plot;label;laser,ok,,"Input identical to NeXus S6 (6034 pts, 633 nm); raw maximum 1434.8; fit row matches fit_S6.csv"
+CAL030,S2,1016.37,peak;fwhm;input;plot;label;laser,ok,,"Input identical to NeXus S2 (1801 pts, 532 nm); very weak broad feature (0.2% of nu1, r2 0.58); a similar weak 1007-1021 hump is present in S4, S5, S6, S10, so it is a real weak feature, correctly left unassigned"
+CAL030,S7,283.84,peak;fwhm;input;plot;label;laser,ok,,"Input identical to NeXus S7 (1006 pts, 785 nm); raw maximum 282.3 with 3.06 cm-1 pixels, fit 283.84 within one pixel; row matches fit_S7.csv"
+CAL031,Fig1b_7.5h,1086.29,peak;fwhm;input;plot;label;laser,ok,,"Input _work/CAL031/Fig1b.csv column 7.5h identical to Source Data sheet Fig.1b Intensity_7.5h (2463 pts); clean fit, row equals fit_Fig1b.csv; 532 nm (Methods)"
+CAL031,FigS4_bulk,1085.75,peak;fwhm;input;plot;label,ok,,"Input identical to Source Data Fig.S4 (2550 pts); weak but visible nu1 in a Ca(OH)2-dominated spectrum (r2 0.47, noted as low S/N); rel_intensity renormalised to nu1 after dropping the Ca(OH)2 357 band"
+CAL031,FigS2_11h,1750.9,peak;fwhm;input;plot;label,ok,,Input identical to Source Data Fig.S2 (2378 pts); weak 2nu2 clearly above noise in the plot; row equals fit_FigS2.csv
+CAL031,FigS11_9IWF,711.87,peak;fwhm;input;plot;label,ok,,Input identical to Source Data Fig.S11 'Carbonation with 9 IWF renewals' (2378 pts); clean fit; row equals fit_FigS11.csv
+CAL032,Y980115_calcite,713,peak;label;laser;sample,ok,,"Fig. 1d (p.691, render): Y 980115 (3/63 spots) labels 153, 279, 713, 1089; text p.692 says lattice modes observed in calcite (3/63 grains, Fig. 1d); 532 nm (p.691)"
+CAL032,Y980115_calcite,1089,peak;label,ok,,Fig. 1d printed label 1089 (the terrestrial calcite in Fig. 1b is 1088)
+CAL033,calcite_fragment_blue457,1085.788,peak;uncertainty;fwhm;laser;sample,ok,,"Zenodo 'Maps Stats Summary.csv' row 'Calcite': Blue Mean RS 1085.788, SD 0.1752178, Blue Mean FWHM 4.359332, N 31449 - all match; 457 nm from the paper title; sample identity (fragment) comes from deposit file names because the PDF is not available"
+CAL033,calcite_powder_6IL_red785,1086.526,peak;uncertainty;fwhm;laser;sample,ok,,"Summary row '6IL': Red Mean RS 1086.526, SD 0.234902, Red Mean FWHM 4.317346, N 6682 - all match; '6IL' = calcite powder is inferred from the R code/file names (PDF not available)"

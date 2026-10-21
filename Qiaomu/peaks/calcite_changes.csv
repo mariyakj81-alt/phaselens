@@ -1,0 +1,320 @@
+paper_id,sample_id,peak_cm1,column,old,new,reason
+CAL005,MgCal9.9,157,notes,paper: T (translational); half width (FWHM) in parentheses,"paper: T (translational); half width (FWHM) in parentheses; possible duplicate of CAL003 17A (same lab): Bischoff 1985 and Urmos 1991 share Sharma and Mackenzie; T/L/nu4/nu1/nu3 positions and all six FWHM are identical to CAL003 Table 1 sample 17A (9.9 mol%), only 2nu2 differs (1750 here vs 1749); avoid double counting",review known item: CAL005 9.9 mol% Mg-calcite matches CAL003 17A
+CAL005,MgCal9.9,284,notes,paper: L (librational); half width (FWHM) in parentheses,"paper: L (librational); half width (FWHM) in parentheses; possible duplicate of CAL003 17A (same lab): Bischoff 1985 and Urmos 1991 share Sharma and Mackenzie; T/L/nu4/nu1/nu3 positions and all six FWHM are identical to CAL003 Table 1 sample 17A (9.9 mol%), only 2nu2 differs (1750 here vs 1749); avoid double counting",review known item: CAL005 9.9 mol% Mg-calcite matches CAL003 17A
+CAL005,MgCal9.9,714,notes,paper: v4; half width (FWHM) in parentheses,"paper: v4; half width (FWHM) in parentheses; possible duplicate of CAL003 17A (same lab): Bischoff 1985 and Urmos 1991 share Sharma and Mackenzie; T/L/nu4/nu1/nu3 positions and all six FWHM are identical to CAL003 Table 1 sample 17A (9.9 mol%), only 2nu2 differs (1750 here vs 1749); avoid double counting",review known item: CAL005 9.9 mol% Mg-calcite matches CAL003 17A
+CAL005,MgCal9.9,1087,notes,paper: v1; half width (FWHM) in parentheses,"paper: v1; half width (FWHM) in parentheses; possible duplicate of CAL003 17A (same lab): Bischoff 1985 and Urmos 1991 share Sharma and Mackenzie; T/L/nu4/nu1/nu3 positions and all six FWHM are identical to CAL003 Table 1 sample 17A (9.9 mol%), only 2nu2 differs (1750 here vs 1749); avoid double counting",review known item: CAL005 9.9 mol% Mg-calcite matches CAL003 17A
+CAL005,MgCal9.9,1438,notes,paper: v3; half width (FWHM) in parentheses,"paper: v3; half width (FWHM) in parentheses; possible duplicate of CAL003 17A (same lab): Bischoff 1985 and Urmos 1991 share Sharma and Mackenzie; T/L/nu4/nu1/nu3 positions and all six FWHM are identical to CAL003 Table 1 sample 17A (9.9 mol%), only 2nu2 differs (1750 here vs 1749); avoid double counting",review known item: CAL005 9.9 mol% Mg-calcite matches CAL003 17A
+CAL005,MgCal9.9,1750,notes,paper: 2 x v2; half width (FWHM) in parentheses,"paper: 2 x v2; half width (FWHM) in parentheses; possible duplicate of CAL003 17A (same lab): Bischoff 1985 and Urmos 1991 share Sharma and Mackenzie; T/L/nu4/nu1/nu3 positions and all six FWHM are identical to CAL003 Table 1 sample 17A (9.9 mol%), only 2nu2 differs (1750 here vs 1749); avoid double counting",review known item: CAL005 9.9 mol% Mg-calcite matches CAL003 17A
+CAL029,SP_coverslip,262,notes,"paper: lattice vibration band; T/L split not named by paper (two lattice bands), mapped by position; likely typo for 282: Fig. S3a labels this band 282","paper: lattice vibration band; T/L split not named by paper (two lattice bands), mapped by position; likely typo for 282: Fig. S3a labels this band 282; review: rendered p.7 confirms the text prints 262, but on the SI Fig. S3a axis this band peaks at ~281 and is labelled 282, so 262 is a likely typo; use the Fig. S3a row (282)",review known item: CAL029 text 262 vs figure 282
+CAL029,SP_all_substrates,282,notes,"single label printed for four overlaid spectra; figure gives no assignment, mapped to nearest reference mode","single label printed for four overlaid spectra; figure gives no assignment, mapped to nearest reference mode; review: preferred over the p.7 text value 262 (likely typo); band maximum read on the S3a axis ~281",review known item: CAL029 text 262 vs figure 282
+CAL030,S9,257.0,notes,"weak unassigned feature; system S9785: SI Table S1 spectral resolution 9.46 cm-1, pixel resolution 1.67 cm-1; Raman-shift axis as deposited (paper's Ne/Si recalibration not applied); fit_raman.py default settings, xrange 100-1900","weak unassigned feature; system S9785: SI Table S1 spectral resolution 9.46 cm-1, pixel resolution 1.67 cm-1; Raman-shift axis as deposited (paper's Ne/Si recalibration not applied); fit_raman.py default settings, xrange 100-1900; review: in the plot this component sits on the low-frequency side of Eg(L) where the baseline leaves a broad hump (150-300 cm-1), so it is most likely background or line-shape residual, not a calcite band",spot-check: clarify nature of weak component
+CAL018,2day_text,282,location,"p.4 Results (Raman spectroscopy), Fig. 4","p.6 Results (Raman spectroscopy), Fig. 4",location page wrong: the sentence with 282/714/1086 is on printed p.6 (PDF p.6)
+CAL018,2day_text,714,location,"p.4 Results (Raman spectroscopy), Fig. 4","p.6 Results (Raman spectroscopy), Fig. 4",location page wrong: the sentence with 282/714/1086 is on printed p.6 (PDF p.6)
+CAL018,2day_text,1086,location,"p.4 Results (Raman spectroscopy), Fig. 4","p.6 Results (Raman spectroscopy), Fig. 4",location page wrong: the sentence with 282/714/1086 is on printed p.6 (PDF p.6)
+CAL027,Hiraodai_ls,1075,notes,"paper: 'very small peak ... might be attributed to 12C16O16O17O' (tentative); paper also notes sCMOS detector artifacts near 1064/1075/1089 cm-1 with g1800 only, and that the 12C16O3 band was fitted as three components 1075/1083/1085 following McKay et al. 2013","paper: 'very small peak ... might be attributed to 12C16O16O17O' (tentative); paper also notes sCMOS detector artifacts near 1064/1075/1089 cm-1 with g1800 only, and that the 12C16O3 band was fitted as three components 1075/1083/1085 following McKay et al. 2013; paper (tentative): nu1 of the 12C16O16O17O isotopologue (no label in mode_reference.json)",consistency: unassigned rows keep the paper's assignment in notes
+CAL027,Hiraodai_ls,1075,mode_symmetry,A1g,,consistency: unassigned rows have blank symmetry/description/assignment_source
+CAL027,Hiraodai_ls,1075,mode_description,tentative nu1 of the 12C16O16O17O isotopologue (paper),,consistency: unassigned rows have blank symmetry/description/assignment_source
+CAL027,Hiraodai_ls,1075,assignment_source,paper,,consistency: unassigned rows have blank symmetry/description/assignment_source
+CAL018,d2_operculum_002,521.79,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL018,d2_operculum_002,1087.56,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL018,d2_sideplate_001,281.95,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL018,d2_sideplate_001,521.83,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL018,d2_sideplate_001,1087.88,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL018,d2_sideplate_003,521.97,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL018,d2_sideplate_003,1087.52,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL018,d3_parietal1,1089.11,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL018,d3_parietal2,1089.36,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL018,d3_parietal3,1089.18,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL018,d6_parietal2,282.4,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL018,d6_parietal2,716.25,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL018,d6_parietal2,1089.4,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL018,d6_parietal3,283.37,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL018,d6_parietal3,714.28,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL018,d6_parietal3,1089.15,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL018,d6_parietal4v2,284.01,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL018,d6_parietal4v2,1089.48,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL018,d6_parietal5,282.84,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL018,d6_parietal5,716.41,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL018,d6_parietal5,1089.16,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL026,expC_pellet,278.0,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL026,expC_pellet,710.34,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL026,expC_pellet,1079.48,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL026,expC_pellet,1085.12,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL026,expC_pellet,1434.05,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL026,expA_grain,278.89,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL026,expA_grain,710.09,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL026,expA_grain,1079.93,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL026,expA_grain,1084.43,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL026,expA_grain,1432.73,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,Fig1b_7h,279.82,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,Fig1b_7h,712.05,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,Fig1b_7h,1085.84,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,Fig1b_7.5h,280.22,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,Fig1b_7.5h,712.04,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,Fig1b_7.5h,1065.34,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,Fig1b_7.5h,1081.71,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,Fig1b_7.5h,1086.29,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,Fig1b_7.5h,1438.03,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,Fig1b_7.5h,1750.83,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,Fig1b_8h,280.62,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,Fig1b_8h,712.12,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,Fig1b_8h,1082.2,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,Fig1b_8h,1086.43,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,Fig1b_8h,1389.93,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,Fig1b_8h,1436.82,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,Fig1b_8h,1749.73,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,Fig1b_9h,280.59,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,Fig1b_9h,712.49,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,Fig1b_9h,1082.07,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,Fig1b_9h,1086.47,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,Fig1b_9h,1389.57,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,Fig1b_9h,1436.87,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,Fig1b_9h,1750.6,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,FigS11_9IWF,278.16,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,FigS11_9IWF,711.87,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,FigS11_9IWF,1085.05,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,FigS11_9IWF,1436.39,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,FigS11_9IWF,1751.05,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,FigS17_0.5h,272.85,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,FigS17_0.5h,707.54,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,FigS17_0.5h,1080.34,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,FigS17_0.5h,1434.6,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,FigS17_0.5h,1747.44,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,FigS17_1h,274.33,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,FigS17_1h,707.58,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,FigS17_1h,1081.33,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,FigS17_1h,1432.99,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,FigS17_1h,1746.36,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,FigS2_11h,280.77,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,FigS2_11h,712.44,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,FigS2_11h,1086.47,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,FigS2_11h,1437.21,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,FigS2_11h,1750.9,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL031,FigS4_bulk,1085.75,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S1,157.18,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S1,283.3,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S1,531.46,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S1,714.69,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S1,873.86,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S1,991.88,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S1,1087.5,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S1,1437.35,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S1,1750.79,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S2,153.41,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S2,279.55,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S2,706.09,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S2,712.46,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S2,1016.37,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S2,1080.78,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S2,1086.23,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S2,1435.25,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S2,1748.6,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S3,155.19,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S3,281.65,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S3,712.88,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S3,1086.71,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S3,1435.78,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S3,1748.97,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S4,148.82,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S4,261.43,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S4,276.01,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S4,708.18,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S4,855.47,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S4,1010.42,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S4,1066.46,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S4,1082.11,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S4,1431.5,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S4,1744.1,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S4,1750.01,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S5,155.09,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S5,272.29,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S5,281.8,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S5,712.27,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S5,1066.78,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S5,1086.33,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S5,1435.95,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S5,1749.34,laser_nm,532.0,532,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S6,154.49,laser_nm,633.0,633,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S6,272.03,laser_nm,633.0,633,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S6,280.62,laser_nm,633.0,633,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S6,710.42,laser_nm,633.0,633,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S6,1012.43,laser_nm,633.0,633,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S6,1064.36,laser_nm,633.0,633,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S6,1084.37,laser_nm,633.0,633,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S6,1144.39,laser_nm,633.0,633,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S6,1434.54,laser_nm,633.0,633,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S6,1747.37,laser_nm,633.0,633,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S7,158.34,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S7,222.17,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S7,283.84,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S7,714.06,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S7,984.71,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S7,1087.68,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S7,1435.51,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S7,1750.25,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S7,1821.77,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S8,154.67,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S8,280.98,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S8,712.05,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S8,1085.9,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S8,1435.01,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S8,1747.02,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S9,150.19,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S9,257.0,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S9,275.83,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S9,706.18,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S9,1062.88,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S9,1081.93,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S9,1432.32,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S9,1748.58,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S10,155.04,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S10,272.61,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S10,281.86,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S10,712.75,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S10,1067.42,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S10,1087.16,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S10,1437.27,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL030,S10,1750.91,laser_nm,785.0,785,"laser_nm format unified within paper and with papers.csv (same value, '785.0' vs '785' split groups)"
+CAL002,(papers.csv),,laser_nm,435.8;253.65 (Hg arc lines),253.65;435.8,"numeric format; the Hg 2536.5 A resonance line excites all tabulated spectra, Hg 4358 A only Fig. 5c (p.194)"
+CAL002,(papers.csv),,notes,Classic memoir (Raman Research Institute Memoir 100). Free PDF from ias.ac.in.,Classic memoir (Raman Research Institute Memoir 100). Free PDF from ias.ac.in. | laser: Hg 2536.5 A (253.65 nm) for the measured spectra and tables; Hg 4358 A only for Fig. 5c (calcite-review),document laser choice
+CAL030,(papers.csv),,laser_nm,514;532;633;785,532;633;785,"paper p.3: systems S1-S10 use 532, 633 and 785 nm (NeXus calcite entries: 532 x5, 633 x1, 785 x4); no 514 nm"
+CAL017,(papers.csv),,peak_table,N,Y,SI Table S1 (SI p.12) is a peak table with calcite T/L/nu4/nu1 for SN01 and SA01
+CAL017,(papers.csv),,notes,"Microbially induced carbonate precipitation. SI PDF included (SI Table S1 covers organic D/G bands, not calcite).",Microbially induced carbonate precipitation. SI PDF included (SI Table S1 lists calcite and vaterite peak positions for SN01-0.3M and SA01-0.3M; SI Table S2 covers the organic D/G bands).,correct SI table description (calcite-review)
+CAL017,(papers.csv),,raman_evidence,p.3: calcite nu1 1085 cm-1 (FWHM 7 cm-1) and external modes 155 and 280 cm-1; vaterite 1076/1088 doublet,p.3: calcite nu1 1085 cm-1 (FWHM 7 cm-1) and external modes 155 and 280 cm-1; vaterite 1076/1088 doublet; SI Table S1 (SI p.12): calcite 154/281/711/1085 (SN01) and 154 (155)/280/710/1085 (1086) (SA01),add the SI peak table
+CAL032,(papers.csv),,raman_evidence,"Fig.2b (p.3): terrestrial calcite spectrum labelled T 157, L 283, nu4 712, nu1 1089 cm-1; Y980115 carbonate spectra vs dolomite","Fig.1b (p.691): terrestrial calcite spectrum labelled T 157, L 283, nu4 712, nu1 1088 cm-1; Fig.1d: minor Y980115 carbonate (calcite, 3/63 spots) 153/279/713/1089 cm-1; Y980115 carbonate spectra vs dolomite","terrestrial calcite nu1 label is 1088 (1089 belongs to the Y980115 calcite) and the figure is Fig. 1, not Fig. 2"
+CAL029,(papers.csv),,raman_evidence,"p.7: calcite precipitate shows nu1 1089, nu4 715 and lattice 156 and 262 cm-1 (Suppl. Fig. S3a); vaterite nu4 doublet 739/749 and nu1 doublet 1075/1090 cm-1","p.7: calcite precipitate shows nu1 1089, nu4 715 and lattice 156 and 262 cm-1 (Suppl. Fig. S3a; 262 is a likely typo, the S3a label and band maximum are 282); vaterite nu4 doublet 739/749 and nu1 doublet 1075/1090 cm-1",flag text typo
+CAL027,(extraction_status.csv),,issues,"Only nu1 region measured (987-1307 cm-1); text gives 1086 (12C16O3), 1065 (18O isotopologue, labelled unassigned since no 18O label exists), 1075 (tentative 17O); Table 1 is isotope-ratio precision only; no raw data","Only nu1 region measured (987-1307 cm-1); text gives 1086 (12C16O3), 1065 (18O isotopologue, labelled nu1(18O) because the paper assigns it), 1075 (tentative 17O); Table 1 is isotope-ratio precision only; no raw data",stale: the row now uses the paper_only label nu1(18O)
+CAL005,(extraction_status.csv),,issues,"Table 1: synthetic calcite, 9.9 mol% Mg-calcite, white and pink Corallium (nm entries skipped); 1011 HCO3- and 1020/1131/1134/1522/1527 carotenoid bands skipped; 9.9 mol% Mg-calcite values nearly identical to CAL003 sample 17A (possible reused data); no DOI","Table 1: synthetic calcite, 9.9 mol% Mg-calcite, white and pink Corallium (nm entries skipped); 1011 HCO3- and 1020/1131/1134/1522/1527 carotenoid bands skipped; 9.9 mol% Mg-calcite values nearly identical to CAL003 sample 17A (possible reused data); no DOI; review: the 6 MgCal9.9 rows are flagged in notes as possible duplicate of CAL003 17A",record known-item resolution
+CAL029,(extraction_status.csv),,issues,Text p.7 156/262/715/1089 and SI Fig. S3a labels 155/282/715/1089 (overlaid SP spectra on 4 substrates); text 262 conflicts with figure 282 (likely typo); vaterite (BS) spectra skipped; no raw data,Text p.7 156/262/715/1089 and SI Fig. S3a labels 155/282/715/1089 (overlaid SP spectra on 4 substrates); text 262 conflicts with figure 282 (likely typo); vaterite (BS) spectra skipped; no raw data; review: Fig. S3a row (282) preferred; text 262 row kept and flagged as likely typo,record known-item resolution
+CAL018,(extraction_status.csv),,issues,"10 of 51 txt spectra fitted (2-day x3, 3-day x3, 6-day x4; calcite-bearing ages only; 1 h/3 h have no CaCO3); raw x-axis ~1-2 cm-1 high (Si at 521.7-522.9) not corrected; T mode hidden by edge filter; 3-day spectra organic-rich so only nu1 kept; nu3/organic/cosmic rows dropped; 3 Si substrate lines kept as artifact; text 282/714/1086 for 2-day","10 of 51 txt spectra fitted (2-day x3, 3-day x3, 6-day x4; calcite-bearing ages only; 1 h/3 h have no CaCO3); raw x-axis ~1-2 cm-1 high (Si at 521.7-522.9) not corrected; T mode hidden by edge filter; 3-day spectra organic-rich so only nu1 kept; nu3/organic/cosmic rows dropped; 3 Si substrate lines kept as artifact; text 282/714/1086 for 2-day; review: 3 Si lines (521.8-522.0, FWHM 5.6) confirmed as artifact; text-row location corrected to p.6",record review
+CAL003,Calcite,154,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Calcite,281,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Calcite,711,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Calcite,1085,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Calcite,1434,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Calcite,1748,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,8C,155,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,8C,281,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,8C,711,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,8C,1085,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,8C,1435,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,8C,1747,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,9B,155,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,9B,281,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,9B,712,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,9B,1086,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,9B,1436,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,9B,1748,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,10C,155,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,10C,282,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,10C,712,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,10C,1086,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,10C,1436,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,10C,1747,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,11A,156,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,11A,284,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,11A,714,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,11A,1087,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,11A,1438,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,11A,1749,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,17A,157,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,17A,284,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,17A,714,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,17A,1087,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,17A,1438,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,17A,1749,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,19C,156,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,19C,283,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,19C,714,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,19C,1087,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,19C,1438,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,19C,1749,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,16B,156,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,16B,286,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,16B,716,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,16B,1086,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,16B,1439,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,16B,1750,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,25A,154,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,25A,278,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,25A,715,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,25A,1088,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,25A,1439,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,25A,1748,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Barnacle,152,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Barnacle,277,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Barnacle,711,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Barnacle,1085,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Diadema_spine1,145,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Diadema_spine1,274,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Diadema_spine1,712,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Diadema_spine1,1084,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Lytechinus_spine1,149,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Lytechinus_spine1,271,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Lytechinus_spine1,710,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Lytechinus_spine1,1084,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Diadema_spinetip1,152,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Diadema_spinetip1,279,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Diadema_spinetip1,712,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Diadema_spinetip1,1086,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Tripneustes_test,280,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Tripneustes_test,714,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Tripneustes_test,1086,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Lytechinus_test2,279,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Lytechinus_test2,1086,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Lytechinus_teeth1,155,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Lytechinus_teeth1,282,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Lytechinus_teeth1,713,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Lytechinus_teeth1,1085,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Diadema_test1,152,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Diadema_test1,284,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Diadema_test1,1087,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Lytechinus_test1,277,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Lytechinus_test1,713,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Lytechinus_test1,1086,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Diadema_test2,153,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Diadema_test2,284,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Diadema_test2,715,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Diadema_test2,1087,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Homotrema,148,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Homotrema,276,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Homotrema,712,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Homotrema,1085,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Echinometra_teeth,152,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Echinometra_teeth,282,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Echinometra_teeth,714,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Echinometra_teeth,1087,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Echinometra_test,157,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Echinometra_test,284,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Echinometra_test,715,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Echinometra_test,1087,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Lithothamnium,270,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Lithothamnium,1086,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Amphiroa,277,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Amphiroa,714,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL003,Amphiroa,1087,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL005,calcite,154,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL005,calcite,281,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL005,calcite,711,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL005,calcite,1085,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL005,calcite,1434,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL005,calcite,1748,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL005,MgCal9.9,157,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL005,MgCal9.9,284,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL005,MgCal9.9,714,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL005,MgCal9.9,1087,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL005,MgCal9.9,1438,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL005,MgCal9.9,1750,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL005,white_coral,159,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL005,white_coral,285,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL005,white_coral,716,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL005,white_coral,1089,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL005,white_coral,1441,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL005,white_coral,1750,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL005,pink_coral,148,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL005,pink_coral,284,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL005,pink_coral,715,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL005,pink_coral,1087,laser_nm,488.0,488,coherence pass: protocol format rule
+CAL018,d2_operculum_002,521.79,assignment_source,paper,rule,coherence pass: protocol format rule
+CAL018,d2_sideplate_001,521.83,assignment_source,paper,rule,coherence pass: protocol format rule
+CAL018,d2_sideplate_003,521.97,assignment_source,paper,rule,coherence pass: protocol format rule

@@ -1,0 +1,56 @@
+{
+  "_note": "Literature reference positions (cm-1) used only as starting guesses and for nearest-mode assignment when a paper gives no assignment. Each region is fitted on its own; modes in one region are fitted together.",
+  "calcite": {
+    "space_group": "R-3c",
+    "point_group": "D3d",
+    "regions": [
+      {"range": [110, 215], "modes": [
+        {"label": "Eg(T)", "symmetry": "Eg", "position": 155, "description": "external lattice mode: translation of CO3 groups against Ca"}]},
+      {"range": [225, 345], "modes": [
+        {"label": "Eg(L)", "symmetry": "Eg", "position": 282, "description": "external lattice mode: libration of CO3 groups"}]},
+      {"range": [665, 760], "modes": [
+        {"label": "nu4", "symmetry": "Eg", "position": 712, "description": "nu4 in-plane O-C-O bending"}]},
+      {"range": [1030, 1130], "modes": [
+        {"label": "nu1(13C)", "symmetry": "A1g", "position": 1066, "optional": true, "tol": 5, "description": "nu1 of the 13C-carbonate isotopologue"},
+        {"label": "nu1(18O)", "symmetry": "A1g", "position": 1065, "paper_only": true, "description": "nu1 of the singly 18O-substituted carbonate; overlaps nu1(13C), so use only when the paper assigns it"},
+        {"label": "nu1", "symmetry": "A1g", "position": 1086, "description": "nu1 symmetric C-O stretching"}]},
+      {"range": [1380, 1490], "modes": [
+        {"label": "nu3", "symmetry": "Eg", "position": 1436, "description": "nu3 antisymmetric C-O stretching"}]},
+      {"range": [1700, 1800], "modes": [
+        {"label": "2nu2", "symmetry": "overtone", "position": 1749, "description": "2nu2 overtone of out-of-plane CO3 bending"}]}
+    ],
+    "other_lines": [
+      {"position": 206, "hint": "aragonite lattice mode"},
+      {"position": 701, "hint": "aragonite nu4"},
+      {"position": 705, "hint": "aragonite nu4"},
+      {"position": 1075, "hint": "vaterite nu1 component"},
+      {"position": 1090, "hint": "vaterite nu1 component"},
+      {"position": 520.7, "hint": "silicon substrate line"}
+    ]
+  },
+  "anatase": {
+    "space_group": "I41/amd",
+    "point_group": "D4h",
+    "regions": [
+      {"range": [95, 240], "modes": [
+        {"label": "Eg(1)", "symmetry": "Eg", "position": 144, "description": "O-Ti-O bending/external, strongest anatase band"},
+        {"label": "Eg(2)", "symmetry": "Eg", "position": 197, "tol": 10, "description": "O-Ti-O bending"}]},
+      {"range": [340, 460], "modes": [
+        {"label": "B1g(1)", "symmetry": "B1g", "position": 399, "description": "O-Ti-O symmetric bending"}]},
+      {"range": [460, 580], "doublet": {"label": "A1g+B1g(2)", "symmetry": "A1g+B1g", "description": "unresolved A1g + B1g(2) doublet"}, "modes": [
+        {"label": "A1g", "symmetry": "A1g", "position": 513, "description": "O-Ti-O antisymmetric bending"},
+        {"label": "B1g(2)", "symmetry": "B1g", "position": 519, "description": "O-Ti-O antisymmetric bending"}]},
+      {"range": [580, 700], "modes": [
+        {"label": "Eg(3)", "symmetry": "Eg", "position": 639, "description": "Ti-O symmetric stretching"}]}
+    ],
+    "other_lines": [
+      {"position": 235, "hint": "rutile two-phonon band"},
+      {"position": 320, "hint": "anatase second-order band"},
+      {"position": 447, "hint": "rutile Eg"},
+      {"position": 520.7, "hint": "silicon substrate line"},
+      {"position": 612, "hint": "rutile A1g"},
+      {"position": 695, "hint": "anatase second-order band"},
+      {"position": 796, "hint": "anatase B1g overtone"}
+    ]
+  }
+}
