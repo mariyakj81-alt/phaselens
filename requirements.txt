@@ -1,0 +1,5 @@
+pybaselines
+scipy
+numpy
+spglib
+marimo
