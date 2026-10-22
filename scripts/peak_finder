@@ -40,7 +40,11 @@ def find_raman_peaks(shift, intensity):
               "height": round(float(smoothed[i]), 4),
               "fwhm_cm-1": round(float(w * step), 2)}
              for i, w in zip(idx, widths)]
-    return {"peaks": peaks}
+    return {
+        "peaks": peaks,
+        "corrected": np.asarray(corrected, dtype=float).tolist(),
+        "baseline": "pybaselines.Baseline.arpls",
+    }
 
 if __name__ == "__main__":
     shift, intensity = load_spectrum(sys.argv[1])

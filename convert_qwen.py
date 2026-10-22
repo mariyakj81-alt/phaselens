@@ -1,3 +1,5 @@
+# Writes examples/*.csv and results/*.json from spectrum files.
+# The JSON copies gold answers. It is not model output, and app.py does not read it.
 import csv, json, sys
 from pathlib import Path
 

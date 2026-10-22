@@ -37,18 +37,102 @@ class DataBlocker(RuntimeError):
     pass
 
 
+_INACTIVE_ACTIVITY = {"second-order", "silent", "inactive"}
+
+
+def _frequency_cm(mode: dict[str, Any]) -> float | None:
+    for key in ("position_cm-1", "position_cm1", "frequency_cm-1"):
+        value = mode.get(key)
+        if isinstance(value, bool) or not isinstance(value, (int, float)):
+            continue
+        return float(value)
+    return None
+
+
+def _raman_listed(mode: dict[str, Any]) -> bool:
+    """True for a Raman-active row in either card shape.
+
+    Schema 2.1 curated rows omit ``raman_activity`` and mean active.
+    Quartz uses boolean ``raman_active`` instead of the string ``raman_activity``.
+    """
+    if mode.get("raman_active") is False:
+        return False
+    activity = mode.get("raman_activity")
+    if isinstance(activity, str) and activity.casefold() in _INACTIVE_ACTIVITY:
+        return False
+    if mode.get("raman_active") is True:
+        return True
+    if isinstance(activity, str):
+        return activity.casefold() == "active"
+    return "symmetry" in mode
+
+
+def _inactive_ids(card: dict[str, Any]) -> set[str]:
+    found: set[str] = set()
+    for mode in card.get("modes") or []:
+        if not isinstance(mode, dict) or _raman_listed(mode):
+            continue
+        for key in ("mode", "id"):
+            value = mode.get(key)
+            if isinstance(value, str) and value:
+                found.add(value)
+    return found
+
+
 def active_peaks(card: dict[str, Any]) -> list[dict[str, Any]]:
-    """Normalize the two existing mode-card shapes."""
-    peaks = []
-    for mode in card.get("curated_expected_modes", []):
-        frequency = mode.get("position_cm-1")
-        if frequency is not None and mode.get("raman_activity", "active") == "active":
-            peaks.append({"frequency_cm-1": float(frequency), "symmetry": mode.get("symmetry"), "label": mode.get("mode")})
-    for mode in card.get("modes", []):
-        frequency = mode.get("position_cm1")
-        if frequency is not None and mode.get("raman_activity") == "active":
-            peaks.append({"frequency_cm-1": float(frequency), "symmetry": mode.get("symmetry"), "label": mode.get("id", mode.get("mode"))})
-    return peaks
+    """Normalize the two existing mode-card shapes. Frequency-less rows are omitted."""
+    return card_peak_rows(card)[0]
+
+
+def card_peak_rows(card: dict[str, Any]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Raman-active rows that have a frequency, plus curated rows that have none."""
+    inactive = _inactive_ids(card)
+    peaks: list[dict[str, Any]] = []
+    skipped: list[dict[str, Any]] = []
+    seen: set[tuple[Any, float, Any]] = set()
+    for source in ("curated_expected_modes", "modes"):
+        for mode in card.get(source) or []:
+            if not isinstance(mode, dict) or not _raman_listed(mode):
+                continue
+            mode_id = mode.get("mode")
+            if isinstance(mode_id, str) and mode_id in inactive:
+                continue
+            symmetry = mode.get("symmetry")
+            if not isinstance(symmetry, str) or not symmetry.strip():
+                continue
+            frequency = _frequency_cm(mode)
+            if frequency is None:
+                if source == "curated_expected_modes":
+                    label = mode.get("id", mode.get("mode", mode.get("orientation")))
+                    skipped.append(
+                        {
+                            "frequency_cm-1": None,
+                            "symmetry": symmetry,
+                            "label": label,
+                            "motion": mode.get("motion"),
+                            "status": "animation_unavailable",
+                            "reason": (
+                                "this card row has no frequency, so it was not matched to "
+                                "eigenvalues and no displacement was invented"
+                            ),
+                            "scene": None,
+                        }
+                    )
+                continue
+            label = mode.get("id", mode.get("mode", mode.get("orientation")))
+            key = (symmetry, round(frequency, 4), label)
+            if key in seen:
+                continue
+            seen.add(key)
+            peaks.append(
+                {
+                    "frequency_cm-1": frequency,
+                    "symmetry": symmetry,
+                    "label": label,
+                    "motion": mode.get("motion"),
+                }
+            )
+    return peaks, skipped
 
 
 def gamma_index(phonon_bs: Any) -> int:
@@ -151,6 +235,208 @@ def animation_validation(frames: list[dict[str, Any]], atom_count: int) -> dict[
         "displacements_nonzero_finite": bool(np.any(np.abs(displacements) > 0) and np.isfinite(displacements).all()),
         "optical_sublattices_opposed": bool(cancellation < 1e-5),
         "frames_oscillate_about_equilibrium": bool(np.allclose(displacements[0], -displacements[FRAME_COUNT // 2])),
+    }
+
+
+def _generated_dir() -> Path:
+    return Path(__file__).resolve().parents[1] / "data" / "generated"
+
+
+def _finite_rows(rows: Any, width: int) -> bool:
+    if not isinstance(rows, list) or not rows:
+        return False
+    for row in rows:
+        if not isinstance(row, list) or len(row) != width:
+            return False
+        for value in row:
+            if isinstance(value, bool) or not isinstance(value, (int, float)):
+                return False
+            if not math.isfinite(float(value)):
+                return False
+    return True
+
+
+def _frames_are_real(animation: Any, atom_count: int) -> bool:
+    frames = animation.get("frames") if isinstance(animation, dict) else None
+    if not isinstance(frames, list) or not frames:
+        return False
+    nonzero = False
+    for frame in frames:
+        if not isinstance(frame, dict):
+            return False
+        coords = frame.get("cartesian_coordinates_angstrom")
+        disp = frame.get("displacements_angstrom")
+        if not _finite_rows(coords, 3) or not _finite_rows(disp, 3):
+            return False
+        if atom_count and len(coords) != atom_count:
+            return False
+        if any(abs(float(component)) > 0 for row in disp for component in row):
+            nonzero = True
+    return nonzero
+
+
+def _same_symmetry(left: Any, right: Any) -> bool:
+    if left == right and isinstance(left, str) and left:
+        return True
+    if not isinstance(left, str) or not isinstance(right, str):
+        return False
+    root = str(Path(__file__).resolve().parents[1])
+    if root not in sys.path:
+        sys.path.insert(0, root)
+    from scripts.label_norm import canonical_label
+
+    canon_left = canonical_label(left)
+    return bool(canon_left) and canon_left == canonical_label(right)
+
+
+def load_saved_exports() -> tuple[dict[str, dict[str, Any]], list[str]]:
+    """Read phonon animation JSON already on disk. Does not call Materials Project."""
+    found: dict[str, dict[str, Any]] = {}
+    errors: list[str] = []
+    folder = _generated_dir()
+    if not folder.is_dir():
+        return found, ["data/generated is missing"]
+    for path in sorted(folder.glob("*.json")):
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as exc:
+            errors.append(f"{path.name} is not valid JSON ({exc})")
+            continue
+        if not isinstance(payload, dict) or payload.get("schema_version") != "phaselens-phonon-animation-1.0":
+            continue
+        payload = dict(payload)
+        payload["_path"] = str(path)
+        material = payload.get("material")
+        material_id = payload.get("material_id")
+        if isinstance(material, str):
+            found[material] = payload
+        if isinstance(material_id, str):
+            found[material_id] = payload
+    return found, errors
+
+
+def _match_saved(peak: dict[str, Any], saved_modes: list[Any]) -> dict[str, Any] | None:
+    best: dict[str, Any] | None = None
+    best_distance: float | None = None
+    for mode in saved_modes:
+        if not isinstance(mode, dict) or not _same_symmetry(peak.get("symmetry"), mode.get("symmetry")):
+            continue
+        frequency = mode.get("frequency_cm-1")
+        if isinstance(frequency, bool) or not isinstance(frequency, (int, float)):
+            continue
+        distance = abs(float(frequency) - float(peak["frequency_cm-1"]))
+        if distance > 0.05:
+            continue
+        if best_distance is None or distance < best_distance:
+            best = mode
+            best_distance = distance
+    return best
+
+
+def _export_error_for(material: Any, material_id: str | None, errors: list[str]) -> str | None:
+    for message in errors:
+        low = message.casefold()
+        if material_id and material_id.casefold() in low:
+            return message
+        if isinstance(material, str) and "silicon" in material.casefold() and "silicon" in low:
+            return message
+    return None
+
+
+def draw_modes(card: dict[str, Any], exports: dict[str, dict[str, Any]] | None = None, export_errors: list[str] | None = None) -> dict[str, Any]:
+    """Structured atomic scenes for one mode card.
+
+    Scenes come only from a saved phonon export. This does not call Materials
+    Project, does not run Phonopy, and does not invent displacements.
+    """
+    if exports is None or export_errors is None:
+        loaded, loaded_errors = load_saved_exports()
+        if exports is None:
+            exports = loaded
+        if export_errors is None:
+            export_errors = loaded_errors
+    peaks, skipped = card_peak_rows(card)
+    material = card.get("material") if isinstance(card, dict) else None
+    material_id = MATERIAL_PROJECT_IDS.get(material) if isinstance(material, str) else None
+    payload = None
+    if isinstance(material, str):
+        payload = exports.get(material)
+    if payload is None and material_id:
+        payload = exports.get(material_id)
+    parse_error = _export_error_for(material, material_id, export_errors)
+    saved_modes = payload.get("modes") if isinstance(payload, dict) else []
+    if not isinstance(saved_modes, list):
+        saved_modes = []
+    structure = payload.get("structure") if isinstance(payload, dict) else {}
+    if not isinstance(structure, dict):
+        structure = {}
+    species = structure.get("species") if isinstance(structure.get("species"), list) else []
+    atom_count = structure.get("atom_count")
+    if not isinstance(atom_count, int):
+        atom_count = len(species)
+    notes: list[str] = []
+    if skipped:
+        named = ", ".join(str(row.get("label") or row.get("symmetry")) for row in skipped)
+        notes.append(
+            f"{len(skipped)} card row(s) have no frequency ({named}), so they were not drawn and no displacement was invented."
+        )
+    if any(peak.get("motion") is None for peak in peaks):
+        notes.append("One or more mode-card motion fields are null. Those fields were not turned into displacements.")
+    modes: list[dict[str, Any]] = []
+    for peak in peaks:
+        if payload is None:
+            reason = parse_error or (
+                "no retrieved eigenvalues for this material (Materials Project was not called)"
+                if material_id
+                else "no retrieved eigenvalues for this material, and no Materials Project id is configured for this card"
+            )
+            modes.append({**peak, "status": "animation_unavailable", "reason": reason, "scene": None})
+            continue
+        match = _match_saved(peak, saved_modes)
+        if match is None:
+            modes.append(
+                {
+                    **peak,
+                    "status": "animation_unavailable",
+                    "reason": "no retrieved eigenvalues for this mode",
+                    "scene": None,
+                }
+            )
+            continue
+        animation = match.get("animation")
+        if match.get("status") == "verified" and _frames_are_real(animation, int(atom_count or 0)):
+            modes.append(
+                {
+                    **peak,
+                    "status": "verified",
+                    "reason": None,
+                    "calculated_frequency_cm-1": match.get("calculated_frequency_cm-1"),
+                    "symmetry_check": match.get("symmetry_check"),
+                    "scene": {
+                        "species": species,
+                        "lattice_angstrom": structure.get("lattice_angstrom"),
+                        "frames": animation["frames"],
+                        "amplitude_angstrom": animation.get("amplitude_angstrom"),
+                        "source": "retrieved eigendisplacements",
+                        "material_id": payload.get("material_id"),
+                        "export_path": payload.get("_path"),
+                    },
+                }
+            )
+            continue
+        reason = match.get("reason") or "eigenvalues were not stored for this mode"
+        if not _frames_are_real(animation, int(atom_count or 0)) and match.get("status") == "verified":
+            reason = "retrieved frames are missing or not finite; displacements were not invented"
+        modes.append({**peak, "status": "animation_unavailable", "reason": reason, "scene": None})
+    modes.extend(skipped)
+    return {
+        "material": material,
+        "material_id": material_id,
+        "export_path": None if not isinstance(payload, dict) else payload.get("_path"),
+        "export_errors": export_errors,
+        "skipped_without_frequency": len(skipped),
+        "notes": notes,
+        "modes": modes,
     }
 
 
