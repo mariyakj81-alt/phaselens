@@ -21,7 +21,7 @@ They differ only in `studies` (and the plasma-line list):
 
 | | Simplified | Comprehensive |
 | --- | --- | --- |
-| `studies` | the primary paper + 2 representative spectra (calcite: CAL010 single crystal, CAL030 deposited spectrum; anatase: ANA068 polarized single crystal, ANA060 deposited spectrum) | every paper: calcite 67 papers / 1187 peaks, anatase 99 papers / 1268 peaks |
+| `studies` | one paper, the most trusted: the checked primary source of the curated positions (calcite: Bischoff et al. 1985, CAL003; anatase: Ishioka et al. 2012, ANA069) | every paper: calcite 67 papers / 1187 peaks, anatase 99 papers / 1268 peaks |
 | plasma lines | only for the primary paper's laser | all lasers in `instrument_lines.json` |
 
 **Done when** (SEQUENCE step 1): a teammate has checked every number against the paper. A checker agent has compared every curated number with the source tables ([CHECK.md](data/mode_card_sources/CHECK.md)); a human teammate still needs to sign off.

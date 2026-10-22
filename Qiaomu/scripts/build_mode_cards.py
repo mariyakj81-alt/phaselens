@@ -13,7 +13,8 @@ Outputs
 - studies: every paper, its spectra (one per sample/condition/laser) and all peaks;
 - cross_paper_summary: agreement (per-mode statistics), conflicts and missing items.
 - mode_cards_simplified/<material>_simplified.json (a few tens of KB, sized like the team's cards): the same sections, but
-  studies cut to the primary paper plus two representative spectra, and plasma lines only for the primary laser.
+  studies cut to the single most trusted paper (the primary paper the curated positions come from), and plasma
+  lines only for that paper's laser.
   Use the simplified card as Qwen's context (ARCHITECTURE.md step 4).
 
 Usage: python -P scripts/build_mode_cards.py
@@ -200,10 +201,11 @@ def build(material):
 
 
 # Simplified cards: same schema, but sized like the team's cards in the repo-root mode_cards/.
-# studies keeps the primary paper plus two representative spectra; (paper_id, sample_id, value_type or None)
+# studies keeps one paper: the primary source of curated_expected_modes, whose numbers were checked against its
+# table (data/mode_card_sources/CHECK.md); (paper_id, sample_id, value_type or None)
 SIMPLE_PICKS = {
-    "calcite": [("CAL003", "Calcite", None), ("CAL010", "xtal_300K", None), ("CAL030", "S10", "fitted_from_deposited_spectrum")],
-    "anatase": [("ANA069", "S532", None), ("ANA068", "TabII", None), ("ANA060", "Thick-Vo", "fitted_from_deposited_spectrum")],
+    "calcite": [("CAL003", "Calcite", None)],   # Bischoff, Sharma & Mackenzie 1985, Table 1, pure calcite, 488 nm
+    "anatase": [("ANA069", "S532", None)],      # Ishioka et al. 2012, Table I, natural single crystal, 532 nm
 }
 
 
@@ -237,7 +239,8 @@ def simplify(material):
         "studies": studies,
         "cross_paper_summary": full["cross_paper_summary"],
         "confounders": full["confounders"],
-        "dataset_notes": [f"Simplified card: 3 representative studies. The full card with every paper "
+        "dataset_notes": [f"Simplified card: one study, the most trusted paper (the checked primary source of curated_expected_modes). "
+                          f"The comprehensive card with every paper "
                           f"({len(full['studies'])} studies) is Qiaomu/mode_cards_comprehensive/{material}.json.",
                           "literature_summary in each curated mode is computed over all papers in the full card.",
                           full["dataset_notes"][0]],
