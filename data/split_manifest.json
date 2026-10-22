@@ -1,0 +1,4573 @@
+{
+  "rule": "Canonical files are training_data JSON files whose names contain no space. Files with a space in the name (reused indexes such as '00268_quartz 2.json') are excluded and not copied. Train = canonical files that are not the held-out material and not the held-out laser. Test = canonical files that are the held-out material or the held-out laser (union). A file that is both is copied once, into test. Held-out material is calcite (mode card calcite_simplified.json). Held-out laser is 632.8 nm because it is the only laser whose plasma lines are real neon lines. This follows the README and ARCHITECTURE exclusion rule. SEQUENCE_OF_EXECUTION.md step 4 also lists clean Valency peak lists and the Lee et al. MoS2 list; those files are not in training_data and are not part of this copy. training_data is only read, never modified.",
+  "held_out_laser_nm": 632.8,
+  "held_out_laser_reason": "632.8 nm is the only laser whose plasma lines are real neon lines.",
+  "held_out_material": "calcite",
+  "held_out_mode_card": "calcite_simplified.json",
+  "source_dir": "training_data",
+  "counts": {
+    "source_json_files": 520,
+    "excluded_space_in_name": 20,
+    "ignored_non_json": 0,
+    "canonical_files": 500,
+    "train_files": 316,
+    "test_files": 184,
+    "test_calcite_only": 74,
+    "test_held_out_laser_only": 84,
+    "test_both_calcite_and_held_out_laser": 26,
+    "train_mode_peaks": 1835,
+    "train_artifact_peaks": 366,
+    "train_false_peaks": 3,
+    "train_other_peaks": 0,
+    "test_mode_peaks": 1038,
+    "test_artifact_peaks": 196,
+    "test_false_peaks": 0,
+    "test_other_peaks": 0,
+    "mode_cards": {
+      "anatase_simplified.json": 100,
+      "calcite_simplified.json": 100,
+      "mos2.json": 100,
+      "quartz.json": 100,
+      "silicon.json": 100
+    },
+    "by_split_material": {
+      "train": {
+        "anatase (TiO2)": 73,
+        "molybdenum disulfide": 78,
+        "quartz": 78,
+        "pristine diamond-cubic Si-I": 87
+      },
+      "test": {
+        "calcite (CaCO3)": 100,
+        "pristine diamond-cubic Si-I": 13,
+        "anatase (TiO2)": 27,
+        "quartz": 22,
+        "molybdenum disulfide": 22
+      }
+    }
+  },
+  "excluded_space_files": [
+    "00268_quartz 2.json",
+    "00269_silicon 2.json",
+    "00284_silicon 2.json",
+    "00298_quartz 3.json",
+    "00312_mos2 2.json",
+    "00314_silicon 3.json",
+    "00328_quartz 3.json",
+    "00418_quartz 3.json",
+    "00419_silicon 3.json",
+    "00434_silicon 3.json",
+    "00447_mos2 3.json",
+    "00448_quartz 3.json",
+    "00449_silicon 3.json",
+    "00462_mos2 3.json",
+    "00463_quartz 3.json",
+    "00464_silicon 3.json",
+    "00477_mos2 3.json",
+    "00478_quartz 3.json",
+    "00492_mos2 3.json",
+    "00493_quartz 3.json"
+  ],
+  "files": [
+    {
+      "source": "training_data/00000_anatase_simplified.json",
+      "destination": "data/train/00000_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00001_calcite_simplified.json",
+      "destination": "data/test/00001_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00002_mos2.json",
+      "destination": "data/train/00002_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 514.5,
+      "layer": "3L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00003_quartz.json",
+      "destination": "data/train/00003_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00004_silicon.json",
+      "destination": "data/test/00004_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00005_anatase_simplified.json",
+      "destination": "data/test/00005_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00006_calcite_simplified.json",
+      "destination": "data/test/00006_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00007_mos2.json",
+      "destination": "data/train/00007_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "2L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00008_quartz.json",
+      "destination": "data/train/00008_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00009_silicon.json",
+      "destination": "data/train/00009_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00010_anatase_simplified.json",
+      "destination": "data/test/00010_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00011_calcite_simplified.json",
+      "destination": "data/test/00011_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00012_mos2.json",
+      "destination": "data/train/00012_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "2L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00013_quartz.json",
+      "destination": "data/test/00013_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00014_silicon.json",
+      "destination": "data/train/00014_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00015_anatase_simplified.json",
+      "destination": "data/train/00015_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00016_calcite_simplified.json",
+      "destination": "data/test/00016_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00017_mos2.json",
+      "destination": "data/train/00017_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "bulk",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00018_quartz.json",
+      "destination": "data/train/00018_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00019_silicon.json",
+      "destination": "data/train/00019_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00020_anatase_simplified.json",
+      "destination": "data/train/00020_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00021_calcite_simplified.json",
+      "destination": "data/test/00021_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00022_mos2.json",
+      "destination": "data/test/00022_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 632.8,
+      "layer": "1L",
+      "split": "test"
+    },
+    {
+      "source": "training_data/00023_quartz.json",
+      "destination": "data/train/00023_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00024_silicon.json",
+      "destination": "data/train/00024_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00025_anatase_simplified.json",
+      "destination": "data/train/00025_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00026_calcite_simplified.json",
+      "destination": "data/test/00026_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00027_mos2.json",
+      "destination": "data/train/00027_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 514.5,
+      "layer": "2L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00028_quartz.json",
+      "destination": "data/train/00028_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00029_silicon.json",
+      "destination": "data/train/00029_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00030_anatase_simplified.json",
+      "destination": "data/test/00030_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00031_calcite_simplified.json",
+      "destination": "data/test/00031_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00032_mos2.json",
+      "destination": "data/train/00032_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "1L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00033_quartz.json",
+      "destination": "data/test/00033_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00034_silicon.json",
+      "destination": "data/test/00034_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00035_anatase_simplified.json",
+      "destination": "data/train/00035_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00036_calcite_simplified.json",
+      "destination": "data/test/00036_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00037_mos2.json",
+      "destination": "data/train/00037_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 532.0,
+      "layer": "4L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00038_quartz.json",
+      "destination": "data/train/00038_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00039_silicon.json",
+      "destination": "data/test/00039_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00040_anatase_simplified.json",
+      "destination": "data/test/00040_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00041_calcite_simplified.json",
+      "destination": "data/test/00041_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00042_mos2.json",
+      "destination": "data/test/00042_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 632.8,
+      "layer": "4L",
+      "split": "test"
+    },
+    {
+      "source": "training_data/00043_quartz.json",
+      "destination": "data/train/00043_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00044_silicon.json",
+      "destination": "data/train/00044_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00045_anatase_simplified.json",
+      "destination": "data/test/00045_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00046_calcite_simplified.json",
+      "destination": "data/test/00046_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00047_mos2.json",
+      "destination": "data/train/00047_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "2L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00048_quartz.json",
+      "destination": "data/train/00048_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00049_silicon.json",
+      "destination": "data/train/00049_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00050_anatase_simplified.json",
+      "destination": "data/test/00050_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00051_calcite_simplified.json",
+      "destination": "data/test/00051_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00052_mos2.json",
+      "destination": "data/train/00052_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 532.0,
+      "layer": "bulk",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00053_quartz.json",
+      "destination": "data/train/00053_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00054_silicon.json",
+      "destination": "data/train/00054_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00055_anatase_simplified.json",
+      "destination": "data/train/00055_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00056_calcite_simplified.json",
+      "destination": "data/test/00056_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00057_mos2.json",
+      "destination": "data/train/00057_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "3L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00058_quartz.json",
+      "destination": "data/train/00058_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00059_silicon.json",
+      "destination": "data/train/00059_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00060_anatase_simplified.json",
+      "destination": "data/train/00060_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00061_calcite_simplified.json",
+      "destination": "data/test/00061_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00062_mos2.json",
+      "destination": "data/test/00062_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 632.8,
+      "layer": "2L",
+      "split": "test"
+    },
+    {
+      "source": "training_data/00063_quartz.json",
+      "destination": "data/test/00063_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00064_silicon.json",
+      "destination": "data/train/00064_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00065_anatase_simplified.json",
+      "destination": "data/train/00065_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00066_calcite_simplified.json",
+      "destination": "data/test/00066_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00067_mos2.json",
+      "destination": "data/test/00067_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 632.8,
+      "layer": "3L",
+      "split": "test"
+    },
+    {
+      "source": "training_data/00068_quartz.json",
+      "destination": "data/test/00068_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00069_silicon.json",
+      "destination": "data/train/00069_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00070_anatase_simplified.json",
+      "destination": "data/train/00070_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00071_calcite_simplified.json",
+      "destination": "data/test/00071_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00072_mos2.json",
+      "destination": "data/train/00072_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 532.0,
+      "layer": "2L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00073_quartz.json",
+      "destination": "data/test/00073_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00074_silicon.json",
+      "destination": "data/train/00074_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00075_anatase_simplified.json",
+      "destination": "data/train/00075_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00076_calcite_simplified.json",
+      "destination": "data/test/00076_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00077_mos2.json",
+      "destination": "data/test/00077_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 632.8,
+      "layer": "4L",
+      "split": "test"
+    },
+    {
+      "source": "training_data/00078_quartz.json",
+      "destination": "data/train/00078_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00079_silicon.json",
+      "destination": "data/train/00079_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00080_anatase_simplified.json",
+      "destination": "data/train/00080_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00081_calcite_simplified.json",
+      "destination": "data/test/00081_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00082_mos2.json",
+      "destination": "data/train/00082_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "1L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00083_quartz.json",
+      "destination": "data/test/00083_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00084_silicon.json",
+      "destination": "data/test/00084_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00085_anatase_simplified.json",
+      "destination": "data/train/00085_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00086_calcite_simplified.json",
+      "destination": "data/test/00086_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00087_mos2.json",
+      "destination": "data/train/00087_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 514.5,
+      "layer": "2L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00088_quartz.json",
+      "destination": "data/train/00088_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00089_silicon.json",
+      "destination": "data/train/00089_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00090_anatase_simplified.json",
+      "destination": "data/train/00090_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00091_calcite_simplified.json",
+      "destination": "data/test/00091_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00092_mos2.json",
+      "destination": "data/test/00092_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 632.8,
+      "layer": "4L",
+      "split": "test"
+    },
+    {
+      "source": "training_data/00093_quartz.json",
+      "destination": "data/train/00093_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00094_silicon.json",
+      "destination": "data/train/00094_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00095_anatase_simplified.json",
+      "destination": "data/test/00095_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00096_calcite_simplified.json",
+      "destination": "data/test/00096_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00097_mos2.json",
+      "destination": "data/test/00097_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 632.8,
+      "layer": "bulk",
+      "split": "test"
+    },
+    {
+      "source": "training_data/00098_quartz.json",
+      "destination": "data/train/00098_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00099_silicon.json",
+      "destination": "data/train/00099_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00100_anatase_simplified.json",
+      "destination": "data/test/00100_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00101_calcite_simplified.json",
+      "destination": "data/test/00101_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00102_mos2.json",
+      "destination": "data/train/00102_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 532.0,
+      "layer": "1L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00103_quartz.json",
+      "destination": "data/train/00103_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00104_silicon.json",
+      "destination": "data/test/00104_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00105_anatase_simplified.json",
+      "destination": "data/test/00105_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00106_calcite_simplified.json",
+      "destination": "data/test/00106_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00107_mos2.json",
+      "destination": "data/train/00107_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 532.0,
+      "layer": "1L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00108_quartz.json",
+      "destination": "data/train/00108_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00109_silicon.json",
+      "destination": "data/test/00109_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00110_anatase_simplified.json",
+      "destination": "data/train/00110_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00111_calcite_simplified.json",
+      "destination": "data/test/00111_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00112_mos2.json",
+      "destination": "data/train/00112_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 532.0,
+      "layer": "1L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00113_quartz.json",
+      "destination": "data/train/00113_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00114_silicon.json",
+      "destination": "data/train/00114_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00115_anatase_simplified.json",
+      "destination": "data/train/00115_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00116_calcite_simplified.json",
+      "destination": "data/test/00116_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00117_mos2.json",
+      "destination": "data/train/00117_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 532.0,
+      "layer": "1L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00118_quartz.json",
+      "destination": "data/train/00118_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00119_silicon.json",
+      "destination": "data/train/00119_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00120_anatase_simplified.json",
+      "destination": "data/train/00120_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00121_calcite_simplified.json",
+      "destination": "data/test/00121_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00122_mos2.json",
+      "destination": "data/train/00122_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "1L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00123_quartz.json",
+      "destination": "data/train/00123_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00124_silicon.json",
+      "destination": "data/train/00124_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00125_anatase_simplified.json",
+      "destination": "data/train/00125_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00126_calcite_simplified.json",
+      "destination": "data/test/00126_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00127_mos2.json",
+      "destination": "data/train/00127_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "2L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00128_quartz.json",
+      "destination": "data/train/00128_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00129_silicon.json",
+      "destination": "data/test/00129_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00130_anatase_simplified.json",
+      "destination": "data/train/00130_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00131_calcite_simplified.json",
+      "destination": "data/test/00131_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00132_mos2.json",
+      "destination": "data/train/00132_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "2L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00133_quartz.json",
+      "destination": "data/train/00133_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00134_silicon.json",
+      "destination": "data/train/00134_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00135_anatase_simplified.json",
+      "destination": "data/test/00135_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00136_calcite_simplified.json",
+      "destination": "data/test/00136_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00137_mos2.json",
+      "destination": "data/test/00137_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 632.8,
+      "layer": "4L",
+      "split": "test"
+    },
+    {
+      "source": "training_data/00138_quartz.json",
+      "destination": "data/train/00138_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00139_silicon.json",
+      "destination": "data/train/00139_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00140_anatase_simplified.json",
+      "destination": "data/train/00140_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00141_calcite_simplified.json",
+      "destination": "data/test/00141_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00142_mos2.json",
+      "destination": "data/train/00142_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "2L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00143_quartz.json",
+      "destination": "data/test/00143_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00144_silicon.json",
+      "destination": "data/train/00144_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00145_anatase_simplified.json",
+      "destination": "data/test/00145_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00146_calcite_simplified.json",
+      "destination": "data/test/00146_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00147_mos2.json",
+      "destination": "data/test/00147_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 632.8,
+      "layer": "bulk",
+      "split": "test"
+    },
+    {
+      "source": "training_data/00148_quartz.json",
+      "destination": "data/train/00148_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00149_silicon.json",
+      "destination": "data/test/00149_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00150_anatase_simplified.json",
+      "destination": "data/train/00150_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00151_calcite_simplified.json",
+      "destination": "data/test/00151_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00152_mos2.json",
+      "destination": "data/train/00152_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 532.0,
+      "layer": "2L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00153_quartz.json",
+      "destination": "data/train/00153_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00154_silicon.json",
+      "destination": "data/train/00154_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00155_anatase_simplified.json",
+      "destination": "data/train/00155_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00156_calcite_simplified.json",
+      "destination": "data/test/00156_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00157_mos2.json",
+      "destination": "data/train/00157_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 532.0,
+      "layer": "4L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00158_quartz.json",
+      "destination": "data/train/00158_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00159_silicon.json",
+      "destination": "data/train/00159_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00160_anatase_simplified.json",
+      "destination": "data/test/00160_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00161_calcite_simplified.json",
+      "destination": "data/test/00161_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00162_mos2.json",
+      "destination": "data/train/00162_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "2L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00163_quartz.json",
+      "destination": "data/train/00163_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00164_silicon.json",
+      "destination": "data/train/00164_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00165_anatase_simplified.json",
+      "destination": "data/test/00165_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00166_calcite_simplified.json",
+      "destination": "data/test/00166_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00167_mos2.json",
+      "destination": "data/train/00167_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "1L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00168_quartz.json",
+      "destination": "data/train/00168_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00169_silicon.json",
+      "destination": "data/train/00169_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00170_anatase_simplified.json",
+      "destination": "data/train/00170_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00171_calcite_simplified.json",
+      "destination": "data/test/00171_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00172_mos2.json",
+      "destination": "data/train/00172_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "3L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00173_quartz.json",
+      "destination": "data/train/00173_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00174_silicon.json",
+      "destination": "data/train/00174_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00175_anatase_simplified.json",
+      "destination": "data/train/00175_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00176_calcite_simplified.json",
+      "destination": "data/test/00176_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00177_mos2.json",
+      "destination": "data/train/00177_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 514.5,
+      "layer": "2L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00178_quartz.json",
+      "destination": "data/train/00178_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00179_silicon.json",
+      "destination": "data/train/00179_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00180_anatase_simplified.json",
+      "destination": "data/train/00180_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00181_calcite_simplified.json",
+      "destination": "data/test/00181_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00182_mos2.json",
+      "destination": "data/train/00182_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "2L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00183_quartz.json",
+      "destination": "data/test/00183_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00184_silicon.json",
+      "destination": "data/train/00184_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00185_anatase_simplified.json",
+      "destination": "data/train/00185_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00186_calcite_simplified.json",
+      "destination": "data/test/00186_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00187_mos2.json",
+      "destination": "data/train/00187_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "3L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00188_quartz.json",
+      "destination": "data/test/00188_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00189_silicon.json",
+      "destination": "data/train/00189_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00190_anatase_simplified.json",
+      "destination": "data/train/00190_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00191_calcite_simplified.json",
+      "destination": "data/test/00191_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00192_mos2.json",
+      "destination": "data/train/00192_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "4L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00193_quartz.json",
+      "destination": "data/train/00193_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00194_silicon.json",
+      "destination": "data/train/00194_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00195_anatase_simplified.json",
+      "destination": "data/test/00195_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00196_calcite_simplified.json",
+      "destination": "data/test/00196_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00197_mos2.json",
+      "destination": "data/train/00197_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 532.0,
+      "layer": "2L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00198_quartz.json",
+      "destination": "data/train/00198_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00199_silicon.json",
+      "destination": "data/test/00199_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00200_anatase_simplified.json",
+      "destination": "data/train/00200_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00201_calcite_simplified.json",
+      "destination": "data/test/00201_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00202_mos2.json",
+      "destination": "data/train/00202_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 532.0,
+      "layer": "2L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00203_quartz.json",
+      "destination": "data/test/00203_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00204_silicon.json",
+      "destination": "data/train/00204_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00205_anatase_simplified.json",
+      "destination": "data/train/00205_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00206_calcite_simplified.json",
+      "destination": "data/test/00206_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00207_mos2.json",
+      "destination": "data/train/00207_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 532.0,
+      "layer": "3L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00208_quartz.json",
+      "destination": "data/train/00208_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00209_silicon.json",
+      "destination": "data/train/00209_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00210_anatase_simplified.json",
+      "destination": "data/train/00210_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00211_calcite_simplified.json",
+      "destination": "data/test/00211_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00212_mos2.json",
+      "destination": "data/test/00212_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 632.8,
+      "layer": "bulk",
+      "split": "test"
+    },
+    {
+      "source": "training_data/00213_quartz.json",
+      "destination": "data/train/00213_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00214_silicon.json",
+      "destination": "data/train/00214_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00215_anatase_simplified.json",
+      "destination": "data/train/00215_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00216_calcite_simplified.json",
+      "destination": "data/test/00216_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00217_mos2.json",
+      "destination": "data/train/00217_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 532.0,
+      "layer": "4L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00218_quartz.json",
+      "destination": "data/train/00218_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00219_silicon.json",
+      "destination": "data/test/00219_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00220_anatase_simplified.json",
+      "destination": "data/test/00220_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00221_calcite_simplified.json",
+      "destination": "data/test/00221_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00222_mos2.json",
+      "destination": "data/test/00222_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 632.8,
+      "layer": "bulk",
+      "split": "test"
+    },
+    {
+      "source": "training_data/00223_quartz.json",
+      "destination": "data/test/00223_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00224_silicon.json",
+      "destination": "data/train/00224_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00225_anatase_simplified.json",
+      "destination": "data/test/00225_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00226_calcite_simplified.json",
+      "destination": "data/test/00226_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00227_mos2.json",
+      "destination": "data/train/00227_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "2L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00228_quartz.json",
+      "destination": "data/train/00228_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00229_silicon.json",
+      "destination": "data/train/00229_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00230_anatase_simplified.json",
+      "destination": "data/train/00230_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00231_calcite_simplified.json",
+      "destination": "data/test/00231_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00232_mos2.json",
+      "destination": "data/test/00232_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 632.8,
+      "layer": "2L",
+      "split": "test"
+    },
+    {
+      "source": "training_data/00233_quartz.json",
+      "destination": "data/test/00233_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00234_silicon.json",
+      "destination": "data/train/00234_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00235_anatase_simplified.json",
+      "destination": "data/test/00235_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00236_calcite_simplified.json",
+      "destination": "data/test/00236_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00237_mos2.json",
+      "destination": "data/train/00237_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 514.5,
+      "layer": "bulk",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00238_quartz.json",
+      "destination": "data/test/00238_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00239_silicon.json",
+      "destination": "data/train/00239_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00240_anatase_simplified.json",
+      "destination": "data/train/00240_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00241_calcite_simplified.json",
+      "destination": "data/test/00241_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00242_mos2.json",
+      "destination": "data/train/00242_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 532.0,
+      "layer": "1L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00243_quartz.json",
+      "destination": "data/train/00243_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00244_silicon.json",
+      "destination": "data/test/00244_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00245_anatase_simplified.json",
+      "destination": "data/train/00245_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00246_calcite_simplified.json",
+      "destination": "data/test/00246_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00247_mos2.json",
+      "destination": "data/train/00247_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 532.0,
+      "layer": "bulk",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00248_quartz.json",
+      "destination": "data/train/00248_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00249_silicon.json",
+      "destination": "data/train/00249_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00250_anatase_simplified.json",
+      "destination": "data/test/00250_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00251_calcite_simplified.json",
+      "destination": "data/test/00251_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00252_mos2.json",
+      "destination": "data/train/00252_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "bulk",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00253_quartz.json",
+      "destination": "data/train/00253_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00254_silicon.json",
+      "destination": "data/train/00254_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00255_anatase_simplified.json",
+      "destination": "data/test/00255_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00256_calcite_simplified.json",
+      "destination": "data/test/00256_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00257_mos2.json",
+      "destination": "data/train/00257_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "4L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00258_quartz.json",
+      "destination": "data/train/00258_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00259_silicon.json",
+      "destination": "data/train/00259_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00260_anatase_simplified.json",
+      "destination": "data/train/00260_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00261_calcite_simplified.json",
+      "destination": "data/test/00261_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00262_mos2.json",
+      "destination": "data/train/00262_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "3L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00263_quartz.json",
+      "destination": "data/train/00263_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00264_silicon.json",
+      "destination": "data/train/00264_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00265_anatase_simplified.json",
+      "destination": "data/test/00265_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00266_calcite_simplified.json",
+      "destination": "data/test/00266_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00267_mos2.json",
+      "destination": "data/test/00267_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 632.8,
+      "layer": "bulk",
+      "split": "test"
+    },
+    {
+      "source": "training_data/00268_quartz.json",
+      "destination": "data/train/00268_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00269_silicon.json",
+      "destination": "data/train/00269_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00270_anatase_simplified.json",
+      "destination": "data/test/00270_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00271_calcite_simplified.json",
+      "destination": "data/test/00271_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00272_mos2.json",
+      "destination": "data/train/00272_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "2L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00273_quartz.json",
+      "destination": "data/train/00273_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00274_silicon.json",
+      "destination": "data/train/00274_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00275_anatase_simplified.json",
+      "destination": "data/train/00275_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00276_calcite_simplified.json",
+      "destination": "data/test/00276_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00277_mos2.json",
+      "destination": "data/train/00277_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "1L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00278_quartz.json",
+      "destination": "data/train/00278_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00279_silicon.json",
+      "destination": "data/train/00279_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00280_anatase_simplified.json",
+      "destination": "data/train/00280_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00281_calcite_simplified.json",
+      "destination": "data/test/00281_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00282_mos2.json",
+      "destination": "data/train/00282_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 514.5,
+      "layer": "2L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00283_quartz.json",
+      "destination": "data/test/00283_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00284_silicon.json",
+      "destination": "data/train/00284_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00285_anatase_simplified.json",
+      "destination": "data/train/00285_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00286_calcite_simplified.json",
+      "destination": "data/test/00286_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00287_mos2.json",
+      "destination": "data/train/00287_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 532.0,
+      "layer": "3L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00288_quartz.json",
+      "destination": "data/train/00288_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00289_silicon.json",
+      "destination": "data/train/00289_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00290_anatase_simplified.json",
+      "destination": "data/train/00290_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00291_calcite_simplified.json",
+      "destination": "data/test/00291_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00292_mos2.json",
+      "destination": "data/train/00292_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 532.0,
+      "layer": "3L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00293_quartz.json",
+      "destination": "data/train/00293_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00294_silicon.json",
+      "destination": "data/train/00294_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00295_anatase_simplified.json",
+      "destination": "data/test/00295_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00296_calcite_simplified.json",
+      "destination": "data/test/00296_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00297_mos2.json",
+      "destination": "data/test/00297_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 632.8,
+      "layer": "1L",
+      "split": "test"
+    },
+    {
+      "source": "training_data/00298_quartz.json",
+      "destination": "data/train/00298_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00299_silicon.json",
+      "destination": "data/train/00299_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00300_anatase_simplified.json",
+      "destination": "data/train/00300_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00301_calcite_simplified.json",
+      "destination": "data/test/00301_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00302_mos2.json",
+      "destination": "data/train/00302_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 532.0,
+      "layer": "2L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00303_quartz.json",
+      "destination": "data/train/00303_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00304_silicon.json",
+      "destination": "data/train/00304_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00305_anatase_simplified.json",
+      "destination": "data/test/00305_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00306_calcite_simplified.json",
+      "destination": "data/test/00306_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00307_mos2.json",
+      "destination": "data/train/00307_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 514.5,
+      "layer": "bulk",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00308_quartz.json",
+      "destination": "data/train/00308_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00309_silicon.json",
+      "destination": "data/train/00309_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00310_anatase_simplified.json",
+      "destination": "data/test/00310_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00311_calcite_simplified.json",
+      "destination": "data/test/00311_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00312_mos2.json",
+      "destination": "data/test/00312_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 632.8,
+      "layer": "4L",
+      "split": "test"
+    },
+    {
+      "source": "training_data/00313_quartz.json",
+      "destination": "data/train/00313_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00314_silicon.json",
+      "destination": "data/train/00314_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00315_anatase_simplified.json",
+      "destination": "data/train/00315_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00316_calcite_simplified.json",
+      "destination": "data/test/00316_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00317_mos2.json",
+      "destination": "data/train/00317_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "3L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00318_quartz.json",
+      "destination": "data/train/00318_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00319_silicon.json",
+      "destination": "data/train/00319_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00320_anatase_simplified.json",
+      "destination": "data/train/00320_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00321_calcite_simplified.json",
+      "destination": "data/test/00321_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00322_mos2.json",
+      "destination": "data/train/00322_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 532.0,
+      "layer": "bulk",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00323_quartz.json",
+      "destination": "data/test/00323_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00324_silicon.json",
+      "destination": "data/train/00324_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00325_anatase_simplified.json",
+      "destination": "data/train/00325_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00326_calcite_simplified.json",
+      "destination": "data/test/00326_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00327_mos2.json",
+      "destination": "data/train/00327_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 514.5,
+      "layer": "4L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00328_quartz.json",
+      "destination": "data/train/00328_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00329_silicon.json",
+      "destination": "data/train/00329_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00330_anatase_simplified.json",
+      "destination": "data/train/00330_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00331_calcite_simplified.json",
+      "destination": "data/test/00331_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00332_mos2.json",
+      "destination": "data/train/00332_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 514.5,
+      "layer": "1L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00333_quartz.json",
+      "destination": "data/train/00333_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00334_silicon.json",
+      "destination": "data/train/00334_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00335_anatase_simplified.json",
+      "destination": "data/train/00335_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00336_calcite_simplified.json",
+      "destination": "data/test/00336_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00337_mos2.json",
+      "destination": "data/train/00337_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "2L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00338_quartz.json",
+      "destination": "data/test/00338_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00339_silicon.json",
+      "destination": "data/train/00339_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00340_anatase_simplified.json",
+      "destination": "data/train/00340_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00341_calcite_simplified.json",
+      "destination": "data/test/00341_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00342_mos2.json",
+      "destination": "data/train/00342_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 532.0,
+      "layer": "4L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00343_quartz.json",
+      "destination": "data/train/00343_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00344_silicon.json",
+      "destination": "data/train/00344_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00345_anatase_simplified.json",
+      "destination": "data/train/00345_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00346_calcite_simplified.json",
+      "destination": "data/test/00346_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00347_mos2.json",
+      "destination": "data/train/00347_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 514.5,
+      "layer": "bulk",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00348_quartz.json",
+      "destination": "data/test/00348_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00349_silicon.json",
+      "destination": "data/train/00349_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00350_anatase_simplified.json",
+      "destination": "data/train/00350_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00351_calcite_simplified.json",
+      "destination": "data/test/00351_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00352_mos2.json",
+      "destination": "data/train/00352_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "bulk",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00353_quartz.json",
+      "destination": "data/train/00353_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00354_silicon.json",
+      "destination": "data/train/00354_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00355_anatase_simplified.json",
+      "destination": "data/train/00355_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00356_calcite_simplified.json",
+      "destination": "data/test/00356_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00357_mos2.json",
+      "destination": "data/train/00357_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "1L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00358_quartz.json",
+      "destination": "data/train/00358_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00359_silicon.json",
+      "destination": "data/train/00359_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00360_anatase_simplified.json",
+      "destination": "data/train/00360_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00361_calcite_simplified.json",
+      "destination": "data/test/00361_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00362_mos2.json",
+      "destination": "data/train/00362_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 532.0,
+      "layer": "4L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00363_quartz.json",
+      "destination": "data/train/00363_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00364_silicon.json",
+      "destination": "data/train/00364_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00365_anatase_simplified.json",
+      "destination": "data/train/00365_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00366_calcite_simplified.json",
+      "destination": "data/test/00366_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00367_mos2.json",
+      "destination": "data/test/00367_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 632.8,
+      "layer": "1L",
+      "split": "test"
+    },
+    {
+      "source": "training_data/00368_quartz.json",
+      "destination": "data/train/00368_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00369_silicon.json",
+      "destination": "data/train/00369_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00370_anatase_simplified.json",
+      "destination": "data/test/00370_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00371_calcite_simplified.json",
+      "destination": "data/test/00371_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00372_mos2.json",
+      "destination": "data/train/00372_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 532.0,
+      "layer": "1L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00373_quartz.json",
+      "destination": "data/test/00373_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00374_silicon.json",
+      "destination": "data/train/00374_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00375_anatase_simplified.json",
+      "destination": "data/test/00375_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00376_calcite_simplified.json",
+      "destination": "data/test/00376_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00377_mos2.json",
+      "destination": "data/train/00377_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "1L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00378_quartz.json",
+      "destination": "data/test/00378_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00379_silicon.json",
+      "destination": "data/train/00379_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00380_anatase_simplified.json",
+      "destination": "data/train/00380_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00381_calcite_simplified.json",
+      "destination": "data/test/00381_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00382_mos2.json",
+      "destination": "data/train/00382_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 514.5,
+      "layer": "3L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00383_quartz.json",
+      "destination": "data/train/00383_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00384_silicon.json",
+      "destination": "data/train/00384_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00385_anatase_simplified.json",
+      "destination": "data/train/00385_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00386_calcite_simplified.json",
+      "destination": "data/test/00386_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00387_mos2.json",
+      "destination": "data/test/00387_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 632.8,
+      "layer": "3L",
+      "split": "test"
+    },
+    {
+      "source": "training_data/00388_quartz.json",
+      "destination": "data/train/00388_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00389_silicon.json",
+      "destination": "data/train/00389_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00390_anatase_simplified.json",
+      "destination": "data/train/00390_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00391_calcite_simplified.json",
+      "destination": "data/test/00391_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00392_mos2.json",
+      "destination": "data/train/00392_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "bulk",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00393_quartz.json",
+      "destination": "data/train/00393_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00394_silicon.json",
+      "destination": "data/train/00394_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00395_anatase_simplified.json",
+      "destination": "data/train/00395_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00396_calcite_simplified.json",
+      "destination": "data/test/00396_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00397_mos2.json",
+      "destination": "data/test/00397_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 632.8,
+      "layer": "3L",
+      "split": "test"
+    },
+    {
+      "source": "training_data/00398_quartz.json",
+      "destination": "data/test/00398_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00399_silicon.json",
+      "destination": "data/test/00399_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00400_anatase_simplified.json",
+      "destination": "data/train/00400_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00401_calcite_simplified.json",
+      "destination": "data/test/00401_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00402_mos2.json",
+      "destination": "data/train/00402_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "bulk",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00403_quartz.json",
+      "destination": "data/train/00403_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00404_silicon.json",
+      "destination": "data/train/00404_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00405_anatase_simplified.json",
+      "destination": "data/train/00405_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00406_calcite_simplified.json",
+      "destination": "data/test/00406_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00407_mos2.json",
+      "destination": "data/test/00407_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 632.8,
+      "layer": "3L",
+      "split": "test"
+    },
+    {
+      "source": "training_data/00408_quartz.json",
+      "destination": "data/train/00408_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00409_silicon.json",
+      "destination": "data/train/00409_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00410_anatase_simplified.json",
+      "destination": "data/train/00410_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00411_calcite_simplified.json",
+      "destination": "data/test/00411_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00412_mos2.json",
+      "destination": "data/train/00412_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 514.5,
+      "layer": "2L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00413_quartz.json",
+      "destination": "data/train/00413_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00414_silicon.json",
+      "destination": "data/test/00414_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00415_anatase_simplified.json",
+      "destination": "data/train/00415_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00416_calcite_simplified.json",
+      "destination": "data/test/00416_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00417_mos2.json",
+      "destination": "data/train/00417_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "4L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00418_quartz.json",
+      "destination": "data/train/00418_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00419_silicon.json",
+      "destination": "data/train/00419_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00420_anatase_simplified.json",
+      "destination": "data/test/00420_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00421_calcite_simplified.json",
+      "destination": "data/test/00421_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00422_mos2.json",
+      "destination": "data/test/00422_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 632.8,
+      "layer": "3L",
+      "split": "test"
+    },
+    {
+      "source": "training_data/00423_quartz.json",
+      "destination": "data/train/00423_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00424_silicon.json",
+      "destination": "data/train/00424_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00425_anatase_simplified.json",
+      "destination": "data/train/00425_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00426_calcite_simplified.json",
+      "destination": "data/test/00426_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00427_mos2.json",
+      "destination": "data/test/00427_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 632.8,
+      "layer": "4L",
+      "split": "test"
+    },
+    {
+      "source": "training_data/00428_quartz.json",
+      "destination": "data/train/00428_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00429_silicon.json",
+      "destination": "data/train/00429_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00430_anatase_simplified.json",
+      "destination": "data/train/00430_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00431_calcite_simplified.json",
+      "destination": "data/test/00431_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00432_mos2.json",
+      "destination": "data/train/00432_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 532.0,
+      "layer": "2L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00433_quartz.json",
+      "destination": "data/train/00433_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00434_silicon.json",
+      "destination": "data/train/00434_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00435_anatase_simplified.json",
+      "destination": "data/train/00435_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00436_calcite_simplified.json",
+      "destination": "data/test/00436_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00437_mos2.json",
+      "destination": "data/train/00437_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "1L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00438_quartz.json",
+      "destination": "data/train/00438_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00439_silicon.json",
+      "destination": "data/train/00439_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00440_anatase_simplified.json",
+      "destination": "data/train/00440_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00441_calcite_simplified.json",
+      "destination": "data/test/00441_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00442_mos2.json",
+      "destination": "data/train/00442_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "4L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00443_quartz.json",
+      "destination": "data/train/00443_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00444_silicon.json",
+      "destination": "data/train/00444_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00445_anatase_simplified.json",
+      "destination": "data/train/00445_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00446_calcite_simplified.json",
+      "destination": "data/test/00446_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00447_mos2.json",
+      "destination": "data/train/00447_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "3L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00448_quartz.json",
+      "destination": "data/train/00448_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00449_silicon.json",
+      "destination": "data/train/00449_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00450_anatase_simplified.json",
+      "destination": "data/train/00450_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00451_calcite_simplified.json",
+      "destination": "data/test/00451_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00452_mos2.json",
+      "destination": "data/train/00452_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "1L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00453_quartz.json",
+      "destination": "data/test/00453_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00454_silicon.json",
+      "destination": "data/train/00454_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00455_anatase_simplified.json",
+      "destination": "data/train/00455_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00456_calcite_simplified.json",
+      "destination": "data/test/00456_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00457_mos2.json",
+      "destination": "data/train/00457_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 514.5,
+      "layer": "3L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00458_quartz.json",
+      "destination": "data/train/00458_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00459_silicon.json",
+      "destination": "data/train/00459_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00460_anatase_simplified.json",
+      "destination": "data/train/00460_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00461_calcite_simplified.json",
+      "destination": "data/test/00461_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00462_mos2.json",
+      "destination": "data/train/00462_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 514.5,
+      "layer": "3L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00463_quartz.json",
+      "destination": "data/train/00463_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00464_silicon.json",
+      "destination": "data/train/00464_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00465_anatase_simplified.json",
+      "destination": "data/train/00465_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00466_calcite_simplified.json",
+      "destination": "data/test/00466_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00467_mos2.json",
+      "destination": "data/train/00467_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "bulk",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00468_quartz.json",
+      "destination": "data/train/00468_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00469_silicon.json",
+      "destination": "data/train/00469_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00470_anatase_simplified.json",
+      "destination": "data/train/00470_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00471_calcite_simplified.json",
+      "destination": "data/test/00471_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00472_mos2.json",
+      "destination": "data/train/00472_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 514.5,
+      "layer": "1L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00473_quartz.json",
+      "destination": "data/train/00473_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00474_silicon.json",
+      "destination": "data/train/00474_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00475_anatase_simplified.json",
+      "destination": "data/train/00475_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00476_calcite_simplified.json",
+      "destination": "data/test/00476_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00477_mos2.json",
+      "destination": "data/train/00477_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 488.0,
+      "layer": "2L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00478_quartz.json",
+      "destination": "data/train/00478_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00479_silicon.json",
+      "destination": "data/train/00479_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00480_anatase_simplified.json",
+      "destination": "data/train/00480_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00481_calcite_simplified.json",
+      "destination": "data/test/00481_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00482_mos2.json",
+      "destination": "data/test/00482_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 632.8,
+      "layer": "bulk",
+      "split": "test"
+    },
+    {
+      "source": "training_data/00483_quartz.json",
+      "destination": "data/train/00483_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00484_silicon.json",
+      "destination": "data/train/00484_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00485_anatase_simplified.json",
+      "destination": "data/train/00485_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00486_calcite_simplified.json",
+      "destination": "data/test/00486_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00487_mos2.json",
+      "destination": "data/train/00487_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 514.5,
+      "layer": "bulk",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00488_quartz.json",
+      "destination": "data/test/00488_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 632.8,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00489_silicon.json",
+      "destination": "data/train/00489_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00490_anatase_simplified.json",
+      "destination": "data/train/00490_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00491_calcite_simplified.json",
+      "destination": "data/test/00491_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00492_mos2.json",
+      "destination": "data/train/00492_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 532.0,
+      "layer": "1L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00493_quartz.json",
+      "destination": "data/train/00493_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 514.5,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00494_silicon.json",
+      "destination": "data/train/00494_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00495_anatase_simplified.json",
+      "destination": "data/train/00495_anatase_simplified.json",
+      "material": "anatase (TiO2)",
+      "mode_card": "anatase_simplified.json",
+      "laser_nm": 532.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00496_calcite_simplified.json",
+      "destination": "data/test/00496_calcite_simplified.json",
+      "material": "calcite (CaCO3)",
+      "mode_card": "calcite_simplified.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "test"
+    },
+    {
+      "source": "training_data/00497_mos2.json",
+      "destination": "data/train/00497_mos2.json",
+      "material": "molybdenum disulfide",
+      "mode_card": "mos2.json",
+      "laser_nm": 532.0,
+      "layer": "3L",
+      "split": "train"
+    },
+    {
+      "source": "training_data/00498_quartz.json",
+      "destination": "data/train/00498_quartz.json",
+      "material": "quartz",
+      "mode_card": "quartz.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    },
+    {
+      "source": "training_data/00499_silicon.json",
+      "destination": "data/train/00499_silicon.json",
+      "material": "pristine diamond-cubic Si-I",
+      "mode_card": "silicon.json",
+      "laser_nm": 488.0,
+      "layer": null,
+      "split": "train"
+    }
+  ]
+}

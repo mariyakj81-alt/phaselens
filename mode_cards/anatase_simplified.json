@@ -117,7 +117,7 @@
     },
     {
       "phase": "anatase",
-      "mode": "A1g+B1g(2)",
+      "mode": "A1g + B1g(2)",
       "symmetry": "A1g + B1g",
       "position_cm-1": 517,
       "position_uncertainty_cm-1": null,
@@ -151,7 +151,7 @@
       "position_uncertainty_cm-1": null,
       "width_cm-1": null,
       "paper_label": null,
-      "motion": "component of the unresolved A1g+B1g(2) band (see notes)",
+      "motion": "component of the unresolved A1g + B1g(2) band (see notes)",
       "source_verified": false,
       "training_eligible": false,
       "provenance": null,
@@ -173,7 +173,7 @@
       "position_uncertainty_cm-1": null,
       "width_cm-1": null,
       "paper_label": null,
-      "motion": "component of the unresolved A1g+B1g(2) band (see notes)",
+      "motion": "component of the unresolved A1g + B1g(2) band (see notes)",
       "source_verified": false,
       "training_eligible": false,
       "provenance": null,
@@ -260,7 +260,7 @@
       "training_eligible": true
     },
     {
-      "mode": "A1g+B1g(2)",
+      "mode": "A1g + B1g(2)",
       "symmetry": "A1g + B1g",
       "raman_activity": "active",
       "training_eligible": true
@@ -372,8 +372,8 @@
               "height": null,
               "height_units": null,
               "fwhm_cm-1": 22,
-              "mode": "A1g+B1g(2)",
-              "symmetry": "A1g+B1g",
+              "mode": "A1g + B1g(2)",
+              "symmetry": "A1g + B1g",
               "raman_activity": "active",
               "phase": "anatase",
               "training_eligible": true,
@@ -637,8 +637,8 @@
               "height": 0.091,
               "height_units": "relative to strongest mode of this spectrum",
               "fwhm_cm-1": 29.41,
-              "mode": "A1g+B1g(2)",
-              "symmetry": "A1g+B1g",
+              "mode": "A1g + B1g(2)",
+              "symmetry": "A1g + B1g",
               "raman_activity": "active",
               "phase": "anatase",
               "training_eligible": true,
@@ -676,7 +676,7 @@
   "cross_paper_summary": {
     "agreement": [
       "A1g: 18 peaks from 8 papers, median 513.5 cm-1 (10-90% range 506.5-517.0)",
-      "A1g+B1g(2): 161 peaks from 76 papers, median 515.1 cm-1 (10-90% range 511.0-520.0)",
+      "A1g + B1g(2): 161 peaks from 76 papers, median 515.1 cm-1 (10-90% range 511.0-520.0)",
       "B1g(1): 197 peaks from 89 papers, median 396.0 cm-1 (10-90% range 391.3-400.0)",
       "B1g(2): 19 peaks from 8 papers, median 519.0 cm-1 (10-90% range 511.2-522.0)",
       "Eg(1): 509 peaks from 95 papers, median 144.9 cm-1 (10-90% range 141.8-151.0)",
