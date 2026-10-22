@@ -10,12 +10,12 @@ This folder holds my assigned work for the project in [../README.md](../README.m
 | [data/mode_cards/anatase.json](data/mode_cards/anatase.json) | Ishioka et al. 2012, Phys. Rev. B 86, 205201, Table I (natural crystal, 532 nm) | See the `check` block and [CHECK.md](data/mode_cards/CHECK.md) |
 | [data/mode_cards/instrument_lines.json](data/mode_cards/instrument_lines.json) | NIST Atomic Spectra Database (laser plasma lines), Si line | Built by `scripts/build_instrument_lines.py` |
 
-Each card follows [../ARCHITECTURE.md](../ARCHITECTURE.md):
-- the point group, checked with spglib against a COD crystal structure in `structures/`;
-- each Raman-active vibration: its name, symmetry, one-line motion and expected position, copied from the source paper;
-- the silent (IR-only and inactive) modes;
-- the instrument lines;
-- the citation.
+Both cards use the team's schema 2.1 (same layout as `../mode_cards/mos2.json` and `silicon.json`) and are built by `scripts/build_mode_cards.py`:
+- `curated_expected_modes`: each Raman-active mode with its symmetry, motion and expected position, **copied from one primary paper** (checked number by number, `data/mode_cards/CHECK.md`; the checked one-paper version is kept in `data/mode_cards/primary_v1/`). Each mode also carries a `literature_summary`: how many papers report it, median and 10-90% range.
+- `studies`: **every collected paper** (calcite 67, anatase 99) with all its spectra and peaks (1187 and 1268 peaks), provenance, value type and `training_eligible` flag.
+- `symmetry_validation` (spglib on the COD structure + factor-group table: Raman-active, IR-only and silent irreps), `artifact_lines` (Si substrate line, laser line, NIST plasma lines), `cross_paper_summary` (agreement, conflicts, missing) and `confounders`.
+
+Each card is about 1 MB because of `studies`. For the Qwen prompt (ARCHITECTURE.md step 4) pass only `curated_expected_modes`, `symmetry_validation` and `artifact_lines`.
 
 **Done when** (SEQUENCE step 1): a teammate has checked every number against the paper. A checker agent has compared every number. A human teammate still needs to sign off: open each card's `check.how` instructions and the two source PDFs.
 
