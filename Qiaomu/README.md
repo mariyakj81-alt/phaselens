@@ -8,6 +8,7 @@ This folder holds my assigned work for the project in [../README.md](../README.m
 | --- | --- | --- |
 | [data/mode_cards/calcite.json](data/mode_cards/calcite.json) | Bischoff, Sharma & Mackenzie 1985, Am. Mineral. 70, 581, Table 1 (488 nm) | Checked by agent, human sign-off pending: [CHECK.md](data/mode_cards/CHECK.md) |
 | [data/mode_cards/anatase.json](data/mode_cards/anatase.json) | Ishioka et al. 2012, Phys. Rev. B 86, 205201, Table I (natural crystal, 532 nm) | Checked by agent, human sign-off pending: [CHECK.md](data/mode_cards/CHECK.md) |
+| [mode_cards/calcite.json](mode_cards/calcite.json), [mode_cards/anatase.json](mode_cards/anatase.json) | **Simplified cards** (same schema, ~25 KB, like the team's `../mode_cards/`): curated modes + 3 representative studies | Generated from the full cards |
 | [data/mode_cards/instrument_lines.json](data/mode_cards/instrument_lines.json) | NIST Atomic Spectra Database (laser plasma lines), Si line | Built by `scripts/build_instrument_lines.py` |
 
 Both cards use the team's schema 2.1 (same layout as `../mode_cards/mos2.json` and `silicon.json`) and are built by `scripts/build_mode_cards.py`:

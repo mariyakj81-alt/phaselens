@@ -192,6 +192,57 @@ def build(material):
           f"{sum(len(s['spectra']) for s in studies)} spectra, {n_rows} peaks -> {out.relative_to(ROOT)}")
 
 
+# Simplified cards: same schema, but sized like the team's cards in ../mode_cards/ (a few KB).
+# studies keeps the primary paper plus two representative spectra; (paper_id, sample_id, value_type or None)
+SIMPLE_PICKS = {
+    "calcite": [("CAL003", "Calcite", None), ("CAL010", "xtal_300K", None), ("CAL030", "S10", "fitted_from_deposited_spectrum")],
+    "anatase": [("ANA069", "S532", None), ("ANA068", "TabII", None), ("ANA060", "Thick-Vo", "fitted_from_deposited_spectrum")],
+}
+
+
+def simplify(material):
+    full = json.loads((CARDS / f"{material}.json").read_text(encoding="utf-8"))
+    by_id = {s["paper_id"]: s for s in full["studies"]}
+    studies = []
+    for pid, sid, vtype in SIMPLE_PICKS[material]:
+        s = by_id[pid]
+        sp = next(x for x in s["spectra"] if x["sample_id"] == sid)
+        peaks = [{k: v for k, v in p.items() if k != "notes"} for p in sp["peaks"]
+                 if p["training_eligible"] and (vtype is None or p["value_type"] == vtype)]
+        studies.append({**{k: s[k] for k in ("paper_id", "doi", "citation", "source", "source_verified", "sample")},
+                        "conditions": {**s["conditions"], "laser_wavelength_nm": sp["laser_wavelength_nm"]},
+                        "spectra": [{"sample_id": sid, "sample_description": sp["sample_description"], "peaks": peaks}],
+                        "training_eligible": True})
+    primary_laser = next(s["conditions"]["laser_wavelength_nm"] for s in studies)
+    plasma = [l for l in full["artifact_lines"]["laser_dependent_plasma_or_stray_light"]
+              if primary_laser and abs(l["laser_wavelength_nm"] - primary_laser) < 1]
+    card = {
+        "schema_version": full["schema_version"],
+        "material": full["material"],
+        "point_group": full["point_group"],
+        "symmetry_validation": full["symmetry_validation"],
+        "curated_expected_modes": [{k: v for k, v in e.items() if k != "width_type"} for e in full["curated_expected_modes"]],
+        "artifact_lines": {"substrate_raman": full["artifact_lines"]["substrate_raman"],
+                           "laser_dependent_plasma_or_stray_light": plasma or [
+                               {"laser_wavelength_nm": primary_laser, "position_cm-1": None, "instrument": "solid-state laser, no plasma lines",
+                                "source_verified": True, "training_eligible": False}]},
+        "modes": full["modes"],
+        "studies": studies,
+        "cross_paper_summary": full["cross_paper_summary"],
+        "confounders": full["confounders"],
+        "dataset_notes": [f"Simplified card: 3 representative studies. The full card with every paper "
+                          f"({len(full['studies'])} studies) is Qiaomu/data/mode_cards/{material}.json.",
+                          "literature_summary in each curated mode is computed over all papers in the full card.",
+                          full["dataset_notes"][0]],
+    }
+    out = ROOT / "mode_cards" / f"{material}.json"
+    out.parent.mkdir(exist_ok=True)
+    out.write_text(json.dumps(card, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    print(f"simplified {material}: {len(studies)} studies, {sum(len(s['spectra'][0]['peaks']) for s in studies)} peaks, "
+          f"{out.stat().st_size // 1024} KB -> {out.relative_to(ROOT)}")
+
+
 if __name__ == "__main__":
     for m in SPEC:
         build(m)
+        simplify(m)
