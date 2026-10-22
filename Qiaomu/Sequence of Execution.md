@@ -3,6 +3,8 @@
 **1. Make five mode cards.**
 A mode card is a small text file for one material. It lists each Raman peak, the symmetry name of that vibration (E′ or A₁′ for MoS₂), the expected peak position, and which peaks are silent. Use Valency to find one paper per material and copy the numbers from the paper. The five materials are MoS₂, quartz, calcite, anatase, and the silicon substrate line. Done when five files exist and a teammate has checked every number against the paper.
 
+*Calcite and anatase (Qiaomu), status:* both cards exist in two versions, `Qiaomu/mode_cards_simplified/` (for Qwen) and `Qiaomu/mode_cards_comprehensive/` (all literature), built by `Qiaomu/scripts/build_mode_cards.py`. Positions are copied from one paper each: Bischoff et al. 1985, Table 1 (calcite) and Ishioka et al. 2012, Table I (anatase). Silent modes come from the factor-group analysis, and the point group is checked with spglib. A checker agent compared every number with the source tables (`Qiaomu/data/mode_card_sources/CHECK.md`); **a human teammate's check is still needed**. Valency was blocked, so the papers were found with OpenAlex, Europe PMC, Crossref and web search.
+
 **2. Build the peak finder.**
 Input is two columns: Raman shift and intensity. Remove the smooth fluorescence background with pybaselines. Find peak positions with scipy. Output is a list of peak positions. Done when you can feed it one simple spectrum and get the peak list back.
 
@@ -10,13 +12,13 @@ Input is two columns: Raman shift and intensity. Remove the smooth fluorescence 
 This script reads a mode card and writes a fake spectrum. It puts a peak at each card frequency, moves the MoS₂ peaks the way the Lee paper says they move with layer number, adds noise, adds a fluorescence hump, and adds one laser-plasma line. Then it runs the peak finder from step 2. It saves the peak list and the correct answer for each peak. The correct answer is known because the script created the peak. A plasma line’s answer is “artifact.” Done when you can press run and get hundreds of these files.
 
 **4. Split the files into train and test.**
-Put most of the fake files in train. Hold out two groups for test: fake spectra from one laser wavelength you left out, and every fake spectrum from one material, such as calcite. Also make a tiny real test: type in the MoS₂ peak positions from the Lee paper, including the silicon line near 521 cm⁻¹. Done when train and test are in separate folders and nobody changes the test folder after this.
+Put most of the fake files in train. Hold out two groups for test: fake spectra from one laser wavelength you left out, and every fake spectrum from one material, such as calcite. Also make a tiny real test: type in the MoS₂ peak positions from the Lee paper, including the silicon line near 521 cm⁻¹. Done when train and test are in separate folders and nobody changes the test folder after this. *(Qiaomu: calcite is the held-out material, so the calcite literature peaks in `Qiaomu/peaks/calcite_peaks.csv` and the comprehensive calcite card belong in test only; anatase literature peaks can go in train.)*
 
 **5. Score Qwen with no training.**
 Send Qwen the mode card and the peak list as plain text. Ask it to return a JSON list that pairs each peak with one symmetry name or with “artifact.” Run this on the test folder. Score two numbers: the fraction of real peaks given the right symmetry name, and the fraction of plasma and silicon lines marked “artifact.” Done when those two numbers are written down.
 
 **6. Add the checker.**
-After Qwen answers, a short Python script checks the answer. One peak gets one label. A silent mode cannot be used. A peak far from the card frequency cannot take that mode’s name. A peak on a plasma line or the silicon line is marked “artifact.” If the check fails, send the reason back to Qwen once. Done when bad answers are either fixed or left as “unassigned.”
+After Qwen answers, a short Python script checks the answer. One peak gets one label. A silent mode cannot be used. A peak far from the card frequency cannot take that mode’s name. *(For calcite and anatase, "far" can be taken from each mode's `literature_summary` 10–90% range in the card.)* A peak on a plasma line or the silicon line is marked “artifact.” If the check fails, send the reason back to Qwen once. Done when bad answers are either fixed or left as “unassigned.”
 
 **7. Score again.**
 Run step 5 plus the checker on the same test folder. Write down the same two numbers. Done when you can compare them with the step 5 numbers.
