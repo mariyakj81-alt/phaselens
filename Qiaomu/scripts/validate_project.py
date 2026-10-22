@@ -1,9 +1,11 @@
-"""Check that the literature dataset hangs together: bibliography, paper folders, PDFs, peak files, status lines.
+"""Check that the literature dataset hangs together: bibliography, paper folders, PDFs, peak files, status lines,
+and the two versions of the mode cards (mode_cards_simplified/, mode_cards_comprehensive/).
 
 Usage: python -P scripts/validate_project.py [--no-pdf]
 Peak rows themselves are checked by scripts/merge_peaks.py; run both before committing.
 Exit code 1 if any problem is found.
 """
+import json
 import re
 import sys
 from pathlib import Path
@@ -92,6 +94,42 @@ def check_mineral(mineral, problems, check_pdfs, with_peaks=True):
     return p
 
 
+def check_cards(material, problems):
+    """Both card versions exist, keep the checked curated positions, and agree with the peak table."""
+    add = lambda msg: problems.append((material, "mode card", msg))
+    v1 = ROOT / "data" / "mode_card_sources" / "primary_v1" / f"{material}_v1.json"
+    cards = {kind: ROOT / f"mode_cards_{kind}" / f"{material}.json" for kind in ("simplified", "comprehensive")}
+    missing = [str(p.relative_to(ROOT)) for p in [v1, *cards.values()] if not p.exists()]
+    if missing:
+        add(f"missing: {', '.join(missing)}")
+        return
+    try:
+        checked = {m["id"]: m["position_cm1"] for m in json.loads(v1.read_text(encoding="utf-8"))["modes"]}
+        loaded = {k: json.loads(p.read_text(encoding="utf-8")) for k, p in cards.items()}
+    except (json.JSONDecodeError, KeyError) as e:
+        add(f"cannot read a card: {e}")
+        return
+    for kind, c in loaded.items():
+        if c.get("schema_version") != "2.1":
+            add(f"{kind} card schema_version is {c.get('schema_version')}, expected 2.1")
+        curated = {e["mode"]: e["position_cm-1"] for e in c.get("curated_expected_modes", [])}
+        if curated != checked:
+            add(f"{kind} card curated positions differ from primary_v1 (rebuild with scripts/build_mode_cards.py)")
+    full, simple = loaded["comprehensive"], loaded["simplified"]
+    n_peaks = sum(len(sp["peaks"]) for s in full["studies"] for sp in s["spectra"])
+    table = ROOT / "peaks" / f"{material}_peaks.csv"
+    if table.exists() and n_peaks != len(pd.read_csv(table, dtype=str)):
+        add(f"comprehensive card has {n_peaks} peaks but peaks/{table.name} has a different row count (rebuild)")
+    full_peaks = {(s["paper_id"], sp["sample_id"], p["position_cm-1"], p["mode"])
+                  for s in full["studies"] for sp in s["spectra"] for p in sp["peaks"]}
+    for s in simple["studies"]:
+        for sp in s["spectra"]:
+            for p in sp["peaks"]:
+                if (s["paper_id"], sp["sample_id"], p["position_cm-1"], p["mode"]) not in full_peaks:
+                    add(f"simplified peak {s['paper_id']} {sp['sample_id']} {p['mode']} {p['position_cm-1']} is not in the comprehensive card")
+    print(f"{material} mode cards: simplified {len(simple['studies'])} studies, comprehensive {len(full['studies'])} studies / {n_peaks} peaks")
+
+
 def main():
     check_pdfs = "--no-pdf" not in sys.argv
     problems, dois = [], {}
@@ -104,6 +142,8 @@ def main():
         if (ROOT / material / "papers.csv").exists():
             p = check_mineral(material, problems, check_pdfs, with_peaks=False)
             print(f"{material}: {len(p)} mode-card source paper(s): {', '.join(p['paper_id'])}")
+    for material in PREFIX:
+        check_cards(material, problems)
     for material in list(PREFIX) + list(REFERENCE):
         if not (ROOT / "structures" / f"{material}.cif").exists():
             problems.append((material, "", f"structures/{material}.cif is missing"))

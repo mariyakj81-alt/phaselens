@@ -122,7 +122,7 @@
       "name": "silicon substrate",
       "position_cm1": 520.7,
       "label": "artifact",
-      "source": "standard Si F2g line; data/mode_cards/instrument_lines.json"
+      "source": "standard Si F2g line; data/mode_card_sources/instrument_lines.json"
     },
     {
       "name": "laser (Rayleigh) line",
@@ -134,7 +134,7 @@
       "name": "laser plasma lines",
       "position_cm1": null,
       "label": "artifact",
-      "source": "see data/mode_cards/instrument_lines.json (Ar+ 488/514.5, He-Ne 632.8, Kr+ 647.1 nm; none for 532, 785, 1064 nm). All are labelled 'artifact'."
+      "source": "see data/mode_card_sources/instrument_lines.json (Ar+ 488/514.5, He-Ne 632.8, Kr+ 647.1 nm; none for 532, 785, 1064 nm). All are labelled 'artifact'."
     },
     {
       "name": "warning",

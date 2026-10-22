@@ -4,7 +4,7 @@
   "silicon_line": {
     "position_cm1": 520.7,
     "label": "artifact",
-    "note": "first-order Si optical phonon (F2g) from a Si or SiO2/Si substrate; see data/mode_cards/silicon.json for its source and second-order bands"
+    "note": "first-order Si optical phonon (F2g) from a Si or SiO2/Si substrate; see the team silicon card (repo-root mode_cards/silicon.json) for its source"
   },
   "laser_line": {
     "position_cm1": 0.0,

@@ -1,8 +1,10 @@
 # Mode card check (2026-10-21, checker agent)
 
+This sheet checks the **curated expected modes** (positions, widths, paper labels) of the two primary-paper cards in `primary_v1/` against their source tables. `scripts/build_mode_cards.py` copies these values unchanged into `mode_cards_comprehensive/` and `mode_cards_simplified/`, and `scripts/validate_project.py` confirms they still match. Human teammate sign-off is still pending.
+
 Method: the table pages were rendered at 300 dpi (`_check/cal_p4_table_crop.png`, `_check/ana_p3_table_crop.png`, plus full pages) and read by eye, and compared with the PDF text layer. No numbers were changed.
 
-## calcite.json  (Bischoff, Sharma, MacKenzie 1985, Table 1, printed p.584, row "Calcite")
+## calcite (primary_v1/calcite_v1.json;  Bischoff, Sharma, MacKenzie 1985, Table 1, printed p.584, row "Calcite")
 
 Table prints frequency (upper) and halfwidth (lower, FWHM per the text on p.583). Columns in the paper: T, L, v4, v1, v3, 2 x v2.
 
@@ -18,7 +20,7 @@ Table prints frequency (upper) and halfwidth (lower, FWHM per the text on p.583)
 source_paper: citation (authors, 1985, Am. Mineral. 70, 581-589, title) OK; location "Table 1 (p.584), row Calcite" OK; laser_nm 488 OK (488.0 nm Ar+ laser, powdered samples, Experimental procedures).
 Problems: none. (The asterisk on 154 is the table footnote "Upper value is frequency, lower value is halfwidth", not a caveat on the value.)
 
-## anatase.json  (Ishioka & Petek 2012, PRB 86, 205201, Table I, Raman columns, PDF p.3)
+## anatase (primary_v1/anatase_v1.json;  Ishioka & Petek 2012, PRB 86, 205201, Table I, Raman columns, PDF p.3)
 
 Table prints Raman frequency, HWHM, assignment. (The separate transient-reflectivity columns, e.g. 195, 395, 507, 637, are not used by the card.)
 

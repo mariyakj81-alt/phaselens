@@ -14,7 +14,7 @@ calcite/_claims.txt
 anatase/_claims.txt
 
 # Checker page renders (copyrighted pages)
-data/mode_cards/_check/
+data/mode_card_sources/_check/
 
 # Search agents' API caches and logs (intermediate; may hold copied abstracts). Their .py scripts stay tracked.
 scripts/*_search*/**/*.json

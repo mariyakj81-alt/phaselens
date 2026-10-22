@@ -1,4 +1,4 @@
-"""Build data/mode_cards/instrument_lines.json: laser plasma lines and the silicon line, as Raman shifts.
+"""Build data/mode_card_sources/instrument_lines.json (an input of scripts/build_mode_cards.py): laser plasma lines and the silicon line, as Raman shifts.
 
 Gas lasers leak emission lines of their discharge. Without a clean-up filter these show up in a Raman
 spectrum as narrow peaks at fixed Raman shifts, the "laser-plasma lines" of ARCHITECTURE.md. Line
@@ -37,7 +37,7 @@ def main():
            "source": "NIST Atomic Spectra Database, https://physics.nist.gov/asd (air wavelengths)",
            "silicon_line": {"position_cm1": 520.7, "label": "artifact",
                             "note": "first-order Si optical phonon (F2g) from a Si or SiO2/Si substrate; "
-                                    "see data/mode_cards/silicon.json for its source and second-order bands"},
+                                    "see the team silicon card (repo-root mode_cards/silicon.json) for its source"},
            "laser_line": {"position_cm1": 0.0, "label": "artifact", "note": "Rayleigh line, seen when data start below the edge/notch filter"},
            "plasma_lines": {}, "lasers_without_plasma_lines": NO_PLASMA}
     for name, gas, fname, laser in LASERS:
@@ -48,7 +48,7 @@ def main():
             "laser_nm_air": laser, "gas_spectrum": gas, "label": "artifact",
             "lines": [{"raman_shift_cm1": round(r.shift, 1), "line_nm_air": round(r.wl, 3), "nist_intensity": r.intens}
                       for r in w.sort_values("shift").itertuples()]}
-    path = ROOT / "data" / "mode_cards" / "instrument_lines.json"
+    path = ROOT / "data" / "mode_card_sources" / "instrument_lines.json"
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     for name, v in out["plasma_lines"].items():

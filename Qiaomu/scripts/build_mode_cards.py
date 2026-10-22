@@ -1,16 +1,20 @@
-"""Build the calcite and anatase mode cards in the team's schema 2.1 (see ../mode_cards/mos2.json, silicon.json).
+"""Build the calcite and anatase mode cards in the team's schema 2.1 (same layout as the repo-root mode_cards/mos2.json, silicon.json).
 
 Inputs
-- data/mode_cards/primary_v1/<material>_v1.json: the checked one-paper card (expected positions copied from
-  the primary source paper, verified against its table; see data/mode_cards/CHECK.md).
+- data/mode_card_sources/primary_v1/<material>_v1.json: the checked one-paper card (expected positions copied from
+  the primary source paper, verified against its table; see data/mode_card_sources/CHECK.md).
 - <material>/papers.csv and peaks/<material>_peaks.csv: every collected paper and every extracted peak.
-- data/mode_cards/instrument_lines.json: Si line and laser plasma lines (NIST ASD).
+- data/mode_card_sources/instrument_lines.json: Si line and laser plasma lines (NIST ASD).
 
-Output: data/mode_cards/<material>.json with
+Outputs
+- mode_cards_comprehensive/<material>.json (about 1 MB) with
 - curated_expected_modes: one entry per Raman-active mode, position from the primary paper, plus the
   spread of that mode over all papers (literature_summary);
 - studies: every paper, its spectra (one per sample/condition/laser) and all peaks;
 - cross_paper_summary: agreement (per-mode statistics), conflicts and missing items.
+- mode_cards_simplified/<material>.json (a few tens of KB, sized like the team's cards): the same sections, but
+  studies cut to the primary paper plus two representative spectra, and plasma lines only for the primary laser.
+  Use the simplified card as Qwen's context (ARCHITECTURE.md step 4).
 
 Usage: python -P scripts/build_mode_cards.py
 """
@@ -21,7 +25,9 @@ from pathlib import Path
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parent.parent
-CARDS = ROOT / "data" / "mode_cards"
+SOURCES = ROOT / "data" / "mode_card_sources"
+FULL_DIR = ROOT / "mode_cards_comprehensive"
+SIMPLE_DIR = ROOT / "mode_cards_simplified"
 
 VALUE_TYPE = {"table": "reported", "text": "reported", "figure_label": "reported_figure_label",
               "figure_digitized": "digitized", "raw_fit": "fitted_from_deposited_spectrum"}
@@ -77,10 +83,10 @@ def page_of(loc):
 
 def build(material):
     spec = SPEC[material]
-    v1 = json.loads((CARDS / "primary_v1" / f"{material}_v1.json").read_text(encoding="utf-8"))
+    v1 = json.loads((SOURCES / "primary_v1" / f"{material}_v1.json").read_text(encoding="utf-8"))
     papers = pd.read_csv(ROOT / material / "papers.csv", dtype=str).fillna("").set_index("paper_id")
     peaks = pd.read_csv(ROOT / "peaks" / f"{material}_peaks.csv", dtype=str).fillna("")
-    il = json.loads((CARDS / "instrument_lines.json").read_text(encoding="utf-8"))
+    il = json.loads((SOURCES / "instrument_lines.json").read_text(encoding="utf-8"))
     cite = v1["citation"]
     prim_doi = cite.get("doi") or None
     prim_prov = {"doi": prim_doi, "url": cite.get("url"), "paper_id": cite["paper_id"],
@@ -170,7 +176,7 @@ def build(material):
         "curated_expected_modes": curated,
         "artifact_lines": {
             "substrate_raman": [{"material": "Si-I", "position_cm-1": 520.2, "symmetry": "F2g", "role": "substrate/reference",
-                                 "provenance": {"doi": "10.1103/PhysRev.155.712", "page": 712, "figure_or_table": "abstract (see mode_cards/silicon.json)"}}],
+                                 "provenance": {"doi": "10.1103/PhysRev.155.712", "page": 712, "figure_or_table": "abstract (see the team silicon card, repo-root mode_cards/silicon.json)"}}],
             "laser_dependent_plasma_or_stray_light": plasma,
             "laser_line": {"position_cm-1": 0.0, "role": "Rayleigh line when data start below the edge filter"}},
         "modes": modes,
@@ -178,7 +184,7 @@ def build(material):
         "cross_paper_summary": {"agreement": agreement, "conflicts": spec["conflicts"], "missing": spec["missing"]},
         "confounders": spec["confounders"],
         "dataset_notes": [
-            f"curated_expected_modes come from one primary paper ({cite['primary']}), checked number by number (data/mode_cards/CHECK.md); "
+            f"curated_expected_modes come from one primary paper ({cite['primary']}), checked number by number (Qiaomu/data/mode_card_sources/CHECK.md); "
             "human teammate sign-off pending.",
             f"studies hold every collected paper: {len(studies)} papers, {n_rows} peaks, extracted by the rules in scripts/EXTRACTION_PROTOCOL.md.",
             "training_eligible is false for unassigned peaks, artifacts and digitized-from-plot values.",
@@ -186,13 +192,14 @@ def build(material):
             "Mode names (Eg(1), A1g+B1g(2), ...) match the mode_label column of peaks/anatase_peaks.csv.",
             "Sources were found with OpenAlex, Europe PMC, Crossref and web search; Valency was blocked by organization policy."] + v1["notes"],
     }
-    out = CARDS / f"{material}.json"
+    FULL_DIR.mkdir(exist_ok=True)
+    out = FULL_DIR / f"{material}.json"
     out.write_text(json.dumps(card, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"{material}: {len(curated)} curated modes, {len(studies)} studies, "
           f"{sum(len(s['spectra']) for s in studies)} spectra, {n_rows} peaks -> {out.relative_to(ROOT)}")
 
 
-# Simplified cards: same schema, but sized like the team's cards in ../mode_cards/ (a few KB).
+# Simplified cards: same schema, but sized like the team's cards in the repo-root mode_cards/.
 # studies keeps the primary paper plus two representative spectra; (paper_id, sample_id, value_type or None)
 SIMPLE_PICKS = {
     "calcite": [("CAL003", "Calcite", None), ("CAL010", "xtal_300K", None), ("CAL030", "S10", "fitted_from_deposited_spectrum")],
@@ -201,7 +208,7 @@ SIMPLE_PICKS = {
 
 
 def simplify(material):
-    full = json.loads((CARDS / f"{material}.json").read_text(encoding="utf-8"))
+    full = json.loads((FULL_DIR / f"{material}.json").read_text(encoding="utf-8"))
     by_id = {s["paper_id"]: s for s in full["studies"]}
     studies = []
     for pid, sid, vtype in SIMPLE_PICKS[material]:
@@ -231,11 +238,11 @@ def simplify(material):
         "cross_paper_summary": full["cross_paper_summary"],
         "confounders": full["confounders"],
         "dataset_notes": [f"Simplified card: 3 representative studies. The full card with every paper "
-                          f"({len(full['studies'])} studies) is Qiaomu/data/mode_cards/{material}.json.",
+                          f"({len(full['studies'])} studies) is Qiaomu/mode_cards_comprehensive/{material}.json.",
                           "literature_summary in each curated mode is computed over all papers in the full card.",
                           full["dataset_notes"][0]],
     }
-    out = ROOT / "mode_cards" / f"{material}.json"
+    out = SIMPLE_DIR / f"{material}.json"
     out.parent.mkdir(exist_ok=True)
     out.write_text(json.dumps(card, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"simplified {material}: {len(studies)} studies, {sum(len(s['spectra'][0]['peaks']) for s in studies)} peaks, "

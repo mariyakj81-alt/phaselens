@@ -210,7 +210,7 @@
         "provenance": {
           "doi": "10.1103/PhysRev.155.712",
           "page": 712,
-          "figure_or_table": "abstract (see mode_cards/silicon.json)"
+          "figure_or_table": "abstract (see the team silicon card, repo-root mode_cards/silicon.json)"
         }
       }
     ],
@@ -833,8 +833,8 @@
     "spectrometer calibration offsets"
   ],
   "dataset_notes": [
-    "Simplified card: 3 representative studies. The full card with every paper (67 studies) is Qiaomu/data/mode_cards/calcite.json.",
+    "Simplified card: 3 representative studies. The full card with every paper (67 studies) is Qiaomu/mode_cards_comprehensive/calcite.json.",
     "literature_summary in each curated mode is computed over all papers in the full card.",
-    "curated_expected_modes come from one primary paper (Bischoff, W. D., Sharma, S. K., Mackenzie, F. T. (1985) Carbonate ion disorder in synthetic and biogenic magnesian calcites: a Raman spectral study. American Mineralogist 70, 581-589.), checked number by number (data/mode_cards/CHECK.md); human teammate sign-off pending."
+    "curated_expected_modes come from one primary paper (Bischoff, W. D., Sharma, S. K., Mackenzie, F. T. (1985) Carbonate ion disorder in synthetic and biogenic magnesian calcites: a Raman spectral study. American Mineralogist 70, 581-589.), checked number by number (Qiaomu/data/mode_card_sources/CHECK.md); human teammate sign-off pending."
   ]
 }
