@@ -57,6 +57,7 @@ python -P scripts/validate_project.py --no-pdf
 | Path | What it is |
 | --- | --- |
 | `mode_cards_simplified/`, `mode_cards_comprehensive/` | The two card versions (deliverable). |
+| `Architecture Overview.md`, `Sequence of Execution.md` | The team plan, with notes on where the calcite/anatase cards and data fit (step 1 status, test-only calcite data, checker window). |
 | `data/mode_card_sources/` | Inputs of the cards: `primary_v1/` (checked one-paper cards), `CHECK.md`, `instrument_lines.json`. |
 | `data/reference/nist_asd/` | NIST line lists used for the plasma lines. |
 | `calcite/papers.csv`, `anatase/papers.csv` | Bibliographies: 67 calcite and 100 anatase papers with Raman data. Each paper's PDF, SI and data files are in its own folder, kept out of git (copyrighted). |
