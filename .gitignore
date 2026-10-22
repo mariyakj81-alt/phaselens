@@ -45,6 +45,21 @@ wandb/
 runs/
 outputs/
 
+# --- Personal Qiaomu workspace (inside mode_cards) ---
+mode_cards/Qiaomu/mos2/
+mode_cards/Qiaomu/data/
+mode_cards/Qiaomu/quartz/
+mode_cards/Qiaomu/scripts/
+mode_cards/Qiaomu/silicon/
+mode_cards/Qiaomu/structures/
+mode_cards/Qiaomu/Architecture Overview.md
+mode_cards/Qiaomu/README.md
+mode_cards/Qiaomu/Sequence of Execution.md
+mode_cards/Qiaomu/feedback.md
+mode_cards/Qiaomu/history.md
+mode_cards/Qiaomu/memory.md
+mode_cards/Qiaomu/requirements.txt
+
 # --- OS, Google Drive and editor files ---
 .DS_Store
 Thumbs.db
