@@ -98,7 +98,8 @@ def check_cards(material, problems):
     """Both card versions exist, keep the checked curated positions, and agree with the peak table."""
     add = lambda msg: problems.append((material, "mode card", msg))
     v1 = ROOT / "data" / "mode_card_sources" / "primary_v1" / f"{material}_v1.json"
-    cards = {kind: ROOT / f"mode_cards_{kind}" / f"{material}.json" for kind in ("simplified", "comprehensive")}
+    cards = {"simplified": ROOT / "mode_cards_simplified" / f"{material}_simplified.json",
+             "comprehensive": ROOT / "mode_cards_comprehensive" / f"{material}.json"}
     missing = [str(p.relative_to(ROOT)) for p in [v1, *cards.values()] if not p.exists()]
     if missing:
         add(f"missing: {', '.join(missing)}")

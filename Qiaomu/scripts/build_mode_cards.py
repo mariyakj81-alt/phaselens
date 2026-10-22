@@ -12,7 +12,7 @@ Outputs
   spread of that mode over all papers (literature_summary);
 - studies: every paper, its spectra (one per sample/condition/laser) and all peaks;
 - cross_paper_summary: agreement (per-mode statistics), conflicts and missing items.
-- mode_cards_simplified/<material>.json (a few tens of KB, sized like the team's cards): the same sections, but
+- mode_cards_simplified/<material>_simplified.json (a few tens of KB, sized like the team's cards): the same sections, but
   studies cut to the primary paper plus two representative spectra, and plasma lines only for the primary laser.
   Use the simplified card as Qwen's context (ARCHITECTURE.md step 4).
 
@@ -242,7 +242,7 @@ def simplify(material):
                           "literature_summary in each curated mode is computed over all papers in the full card.",
                           full["dataset_notes"][0]],
     }
-    out = SIMPLE_DIR / f"{material}.json"
+    out = SIMPLE_DIR / f"{material}_simplified.json"
     out.parent.mkdir(exist_ok=True)
     out.write_text(json.dumps(card, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"simplified {material}: {len(studies)} studies, {sum(len(s['spectra'][0]['peaks']) for s in studies)} peaks, "

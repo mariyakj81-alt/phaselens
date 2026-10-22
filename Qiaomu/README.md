@@ -6,7 +6,7 @@ This folder holds my assigned work for the project in [../README.md](../README.m
 
 | Folder | Files | Size | Use it for |
 | --- | --- | --- | --- |
-| [mode_cards_simplified/](mode_cards_simplified/) | `calcite.json`, `anatase.json` | ~25 KB | Qwen's context (ARCHITECTURE.md step 4) and quick reading. Sized like the team's cards. |
+| [mode_cards_simplified/](mode_cards_simplified/) | `calcite_simplified.json`, `anatase_simplified.json` | ~25 KB | Qwen's context (ARCHITECTURE.md step 4) and quick reading. Sized like the team's cards. |
 | [mode_cards_comprehensive/](mode_cards_comprehensive/) | `calcite.json`, `anatase.json` | ~1 MB | All the literature: every collected paper and every extracted peak. |
 
 Both versions use the team's schema 2.1 (same layout as the repo-root `mode_cards/mos2.json` and `silicon.json`) and share these sections:
@@ -36,7 +36,7 @@ data/mode_card_sources/instrument_lines.json           Si line + NIST plasma lin
 <material>/papers.csv + peaks/<material>_peaks.csv     all papers and peaks          <- extraction + scripts/merge_peaks.py
         |
         v  scripts/build_mode_cards.py
-mode_cards_comprehensive/<material>.json  ->  mode_cards_simplified/<material>.json
+mode_cards_comprehensive/<material>.json  ->  mode_cards_simplified/<material>_simplified.json
 ```
 
 Rebuild and check, from this folder:
