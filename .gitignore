@@ -60,6 +60,33 @@ mode_cards/Qiaomu/history.md
 mode_cards/Qiaomu/memory.md
 mode_cards/Qiaomu/requirements.txt
 
+# --- Qiaomu workspace: downloaded papers and scratch files ---
+# Downloaded papers, SI and data files are copyrighted; keep them local.
+# The per-mineral papers.csv bibliographies and the peak CSVs stay tracked.
+mode_cards/Qiaomu/calcite/*/
+mode_cards/Qiaomu/anatase/*/
+mode_cards/Qiaomu/mos2/*/
+mode_cards/Qiaomu/quartz/*/
+mode_cards/Qiaomu/silicon/*/
+
+# Agents' scratch work: rendered paper pages, exported spectra, backups
+mode_cards/Qiaomu/peaks/*/_work/
+
+# Search claims are coordination files, not data
+mode_cards/Qiaomu/calcite/_claims.txt
+mode_cards/Qiaomu/anatase/_claims.txt
+
+# Checker page renders (copyrighted pages)
+mode_cards/Qiaomu/data/mode_card_sources/_check/
+
+# Search agents' API caches and logs (intermediate; may hold copied abstracts). Their .py scripts stay tracked.
+mode_cards/Qiaomu/scripts/*_search*/**/*.json
+mode_cards/Qiaomu/scripts/*_search*/**/*.log
+mode_cards/Qiaomu/scripts/*_search*/**/*.txt
+mode_cards/Qiaomu/scripts/*_search*/*.json
+mode_cards/Qiaomu/scripts/*_search*/*.log
+mode_cards/Qiaomu/scripts/*_search*/*.txt
+
 # --- OS, Google Drive and editor files ---
 .DS_Store
 Thumbs.db
