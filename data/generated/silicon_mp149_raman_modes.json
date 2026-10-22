@@ -2,7 +2,7 @@
   "schema_version": "phaselens-phonon-animation-1.0",
   "material": "pristine diamond-cubic Si-I",
   "material_id": "mp-149",
-  "mode_card": "mode_cards/silicon.json"",
+  "mode_card": "mode_cards/silicon.json",
   "structure": {
     "atom_count": 2,
     "species": [
