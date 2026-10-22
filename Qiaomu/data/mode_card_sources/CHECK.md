@@ -1,6 +1,6 @@
 # Mode card check (2026-10-21, checker agent)
 
-This sheet checks the **curated expected modes** (positions, widths, paper labels) of the two primary-paper cards in `primary_v1/` against their source tables. `scripts/build_mode_cards.py` copies these values unchanged into `mode_cards_comprehensive/` and `mode_cards_simplified/`, and `scripts/validate_project.py` confirms they still match. Human teammate sign-off is still pending.
+This sheet checks the **curated expected modes** (positions, widths, paper labels) of the two primary-paper cards in `primary_v1/` against their source tables. `scripts/build_mode_cards.py` copies these values unchanged into `mode_cards_simplified/<material>.json`, `mode_cards_comprehensive/<material>_comprehensive.json` and their repo-root copies in `mode_cards/`, and `scripts/validate_project.py` confirms they still match. Human teammate sign-off is still pending.
 
 Method: the table pages were rendered at 300 dpi (`_check/cal_p4_table_crop.png`, `_check/ana_p3_table_crop.png`, plus full pages) and read by eye, and compared with the PDF text layer. No numbers were changed.
 

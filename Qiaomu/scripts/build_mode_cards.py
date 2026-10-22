@@ -7,15 +7,18 @@ Inputs
 - data/mode_card_sources/instrument_lines.json: Si line and laser plasma lines (NIST ASD).
 
 Outputs
-- mode_cards_comprehensive/<material>.json (about 1 MB) with
+- mode_cards_comprehensive/<material>_comprehensive.json (about 1 MB) with
 - curated_expected_modes: one entry per Raman-active mode, position from the primary paper, plus the
   spread of that mode over all papers (literature_summary);
 - studies: every paper, its spectra (one per sample/condition/laser) and all peaks;
 - cross_paper_summary: agreement (per-mode statistics), conflicts and missing items.
-- mode_cards_simplified/<material>_simplified.json (a few tens of KB, sized like the team's cards): the same sections, but
+- mode_cards_simplified/<material>.json, the default card (a few tens of KB, sized like the team's cards): the same sections, but
   studies cut to the single most trusted paper (the primary paper the curated positions come from), and plasma
   lines only for that paper's laser.
-  Use the simplified card as Qwen's context (ARCHITECTURE.md step 4).
+  Use the simplified card as Qwen's context (ARCHITECTURE.md step 4). An identical copy is written to the
+  repo-root team folder: mode_cards/<material>.json (simplified) and mode_cards/<material>_comprehensive.json;
+  no other file in that folder is touched.
+  Paths inside the cards (CIF, NIST files) are relative to the repo root, so every copy reads the same.
 
 Usage: python -P scripts/build_mode_cards.py
 """
@@ -29,6 +32,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SOURCES = ROOT / "data" / "mode_card_sources"
 FULL_DIR = ROOT / "mode_cards_comprehensive"
 SIMPLE_DIR = ROOT / "mode_cards_simplified"
+TEAM_DIR = ROOT.parent / "mode_cards"  # repo-root team folder: only <material>.json and <material>_comprehensive.json are written there
 
 VALUE_TYPE = {"table": "reported", "text": "reported", "figure_label": "reported_figure_label",
               "figure_digitized": "digitized", "raw_fit": "fitted_from_deposited_spectrum"}
@@ -120,7 +124,7 @@ def build(material):
 
     plasma = [{"laser_wavelength_nm": v["laser_nm_air"], "position_cm-1": l["raman_shift_cm1"], "instrument": f"{name} laser ({v['gas_spectrum']} line {l['line_nm_air']} nm)",
                "source_verified": True, "training_eligible": False,
-               "provenance": {"source": "NIST Atomic Spectra Database", "file": "data/reference/nist_asd/"}}
+               "provenance": {"source": "NIST Atomic Spectra Database", "file": "Qiaomu/data/reference/nist_asd/"}}
               for name, v in il["plasma_lines"].items() for l in v["lines"]]
 
     studies = []
@@ -167,7 +171,7 @@ def build(material):
             "method": "spglib 2.8.0 on the COD crystal structure; phonon irreps from factor-group analysis (literature-backed, not inferred by spglib)",
             "structure": {"space_group": spec["spg"], "space_group_number": spec["spg_no"],
                           "point_group": v1["point_group_status"].split("point group ")[-1].split(":")[0],
-                          "spglib_verified": True, "cif": f"structures/{material}.cif",
+                          "spglib_verified": True, "cif": f"Qiaomu/structures/{material}.cif",
                           "cod_id": re.search(r"COD (\d+)", v1["point_group_status"]).group(1)},
             "literature_symmetry_table": {
                 "doi": None, "source": "factor-group analysis (Rousseau, Bauman & Porto 1981, J. Raman Spectrosc. 10, 253)",
@@ -194,8 +198,11 @@ def build(material):
             "Sources were found with OpenAlex, Europe PMC, Crossref and web search; Valency was blocked by organization policy."] + v1["notes"],
     }
     FULL_DIR.mkdir(exist_ok=True)
-    out = FULL_DIR / f"{material}.json"
-    out.write_text(json.dumps(card, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+    out = FULL_DIR / f"{material}_comprehensive.json"
+    text = json.dumps(card, indent=1, ensure_ascii=False) + "\n"
+    out.write_text(text, encoding="utf-8")
+    TEAM_DIR.mkdir(exist_ok=True)
+    (TEAM_DIR / out.name).write_text(text, encoding="utf-8")
     print(f"{material}: {len(curated)} curated modes, {len(studies)} studies, "
           f"{sum(len(s['spectra']) for s in studies)} spectra, {n_rows} peaks -> {out.relative_to(ROOT)}")
 
@@ -210,7 +217,7 @@ SIMPLE_PICKS = {
 
 
 def simplify(material):
-    full = json.loads((FULL_DIR / f"{material}.json").read_text(encoding="utf-8"))
+    full = json.loads((FULL_DIR / f"{material}_comprehensive.json").read_text(encoding="utf-8"))
     by_id = {s["paper_id"]: s for s in full["studies"]}
     studies = []
     for pid, sid, vtype in SIMPLE_PICKS[material]:
@@ -241,15 +248,18 @@ def simplify(material):
         "confounders": full["confounders"],
         "dataset_notes": [f"Simplified card: one study, the most trusted paper (the checked primary source of curated_expected_modes). "
                           f"The comprehensive card with every paper "
-                          f"({len(full['studies'])} studies) is Qiaomu/mode_cards_comprehensive/{material}.json.",
+                          f"({len(full['studies'])} studies) is Qiaomu/mode_cards_comprehensive/{material}_comprehensive.json.",
                           "literature_summary in each curated mode is computed over all papers in the full card.",
                           full["dataset_notes"][0]],
     }
-    out = SIMPLE_DIR / f"{material}_simplified.json"
+    out = SIMPLE_DIR / f"{material}.json"
     out.parent.mkdir(exist_ok=True)
-    out.write_text(json.dumps(card, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    text = json.dumps(card, indent=2, ensure_ascii=False) + "\n"
+    out.write_text(text, encoding="utf-8")
+    # identical copy in the repo-root team folder (the comprehensive copy is written by build())
+    (TEAM_DIR / out.name).write_text(text, encoding="utf-8")
     print(f"simplified {material}: {len(studies)} studies, {sum(len(s['spectra'][0]['peaks']) for s in studies)} peaks, "
-          f"{out.stat().st_size // 1024} KB -> {out.relative_to(ROOT)}")
+          f"{out.stat().st_size // 1024} KB -> {out.relative_to(ROOT)} and ../mode_cards/{out.name}")
 
 
 if __name__ == "__main__":

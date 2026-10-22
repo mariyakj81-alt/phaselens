@@ -9,7 +9,7 @@
    "space_group_number": 141,
    "point_group": "4/mmm",
    "spglib_verified": true,
-   "cif": "structures/anatase.cif",
+   "cif": "Qiaomu/structures/anatase.cif",
    "cod_id": "9015929"
   },
   "literature_symmetry_table": {
@@ -246,7 +246,7 @@
     "training_eligible": false,
     "provenance": {
      "source": "NIST Atomic Spectra Database",
-     "file": "data/reference/nist_asd/"
+     "file": "Qiaomu/data/reference/nist_asd/"
     }
    },
    {
@@ -257,7 +257,7 @@
     "training_eligible": false,
     "provenance": {
      "source": "NIST Atomic Spectra Database",
-     "file": "data/reference/nist_asd/"
+     "file": "Qiaomu/data/reference/nist_asd/"
     }
    },
    {
@@ -268,7 +268,7 @@
     "training_eligible": false,
     "provenance": {
      "source": "NIST Atomic Spectra Database",
-     "file": "data/reference/nist_asd/"
+     "file": "Qiaomu/data/reference/nist_asd/"
     }
    },
    {
@@ -279,7 +279,7 @@
     "training_eligible": false,
     "provenance": {
      "source": "NIST Atomic Spectra Database",
-     "file": "data/reference/nist_asd/"
+     "file": "Qiaomu/data/reference/nist_asd/"
     }
    },
    {
@@ -290,7 +290,7 @@
     "training_eligible": false,
     "provenance": {
      "source": "NIST Atomic Spectra Database",
-     "file": "data/reference/nist_asd/"
+     "file": "Qiaomu/data/reference/nist_asd/"
     }
    },
    {
@@ -301,7 +301,7 @@
     "training_eligible": false,
     "provenance": {
      "source": "NIST Atomic Spectra Database",
-     "file": "data/reference/nist_asd/"
+     "file": "Qiaomu/data/reference/nist_asd/"
     }
    },
    {
@@ -312,7 +312,7 @@
     "training_eligible": false,
     "provenance": {
      "source": "NIST Atomic Spectra Database",
-     "file": "data/reference/nist_asd/"
+     "file": "Qiaomu/data/reference/nist_asd/"
     }
    },
    {
@@ -323,7 +323,7 @@
     "training_eligible": false,
     "provenance": {
      "source": "NIST Atomic Spectra Database",
-     "file": "data/reference/nist_asd/"
+     "file": "Qiaomu/data/reference/nist_asd/"
     }
    },
    {
@@ -334,7 +334,7 @@
     "training_eligible": false,
     "provenance": {
      "source": "NIST Atomic Spectra Database",
-     "file": "data/reference/nist_asd/"
+     "file": "Qiaomu/data/reference/nist_asd/"
     }
    },
    {
@@ -345,7 +345,7 @@
     "training_eligible": false,
     "provenance": {
      "source": "NIST Atomic Spectra Database",
-     "file": "data/reference/nist_asd/"
+     "file": "Qiaomu/data/reference/nist_asd/"
     }
    },
    {
@@ -356,7 +356,7 @@
     "training_eligible": false,
     "provenance": {
      "source": "NIST Atomic Spectra Database",
-     "file": "data/reference/nist_asd/"
+     "file": "Qiaomu/data/reference/nist_asd/"
     }
    },
    {
@@ -367,7 +367,7 @@
     "training_eligible": false,
     "provenance": {
      "source": "NIST Atomic Spectra Database",
-     "file": "data/reference/nist_asd/"
+     "file": "Qiaomu/data/reference/nist_asd/"
     }
    },
    {
@@ -378,7 +378,7 @@
     "training_eligible": false,
     "provenance": {
      "source": "NIST Atomic Spectra Database",
-     "file": "data/reference/nist_asd/"
+     "file": "Qiaomu/data/reference/nist_asd/"
     }
    },
    {
@@ -389,7 +389,7 @@
     "training_eligible": false,
     "provenance": {
      "source": "NIST Atomic Spectra Database",
-     "file": "data/reference/nist_asd/"
+     "file": "Qiaomu/data/reference/nist_asd/"
     }
    },
    {
@@ -400,7 +400,7 @@
     "training_eligible": false,
     "provenance": {
      "source": "NIST Atomic Spectra Database",
-     "file": "data/reference/nist_asd/"
+     "file": "Qiaomu/data/reference/nist_asd/"
     }
    },
    {
@@ -411,7 +411,7 @@
     "training_eligible": false,
     "provenance": {
      "source": "NIST Atomic Spectra Database",
-     "file": "data/reference/nist_asd/"
+     "file": "Qiaomu/data/reference/nist_asd/"
     }
    },
    {
@@ -422,7 +422,7 @@
     "training_eligible": false,
     "provenance": {
      "source": "NIST Atomic Spectra Database",
-     "file": "data/reference/nist_asd/"
+     "file": "Qiaomu/data/reference/nist_asd/"
     }
    },
    {
@@ -433,7 +433,7 @@
     "training_eligible": false,
     "provenance": {
      "source": "NIST Atomic Spectra Database",
-     "file": "data/reference/nist_asd/"
+     "file": "Qiaomu/data/reference/nist_asd/"
     }
    },
    {
@@ -444,7 +444,7 @@
     "training_eligible": false,
     "provenance": {
      "source": "NIST Atomic Spectra Database",
-     "file": "data/reference/nist_asd/"
+     "file": "Qiaomu/data/reference/nist_asd/"
     }
    },
    {
@@ -455,7 +455,7 @@
     "training_eligible": false,
     "provenance": {
      "source": "NIST Atomic Spectra Database",
-     "file": "data/reference/nist_asd/"
+     "file": "Qiaomu/data/reference/nist_asd/"
     }
    },
    {
@@ -466,7 +466,7 @@
     "training_eligible": false,
     "provenance": {
      "source": "NIST Atomic Spectra Database",
-     "file": "data/reference/nist_asd/"
+     "file": "Qiaomu/data/reference/nist_asd/"
     }
    },
    {
@@ -477,7 +477,7 @@
     "training_eligible": false,
     "provenance": {
      "source": "NIST Atomic Spectra Database",
-     "file": "data/reference/nist_asd/"
+     "file": "Qiaomu/data/reference/nist_asd/"
     }
    },
    {
@@ -488,7 +488,7 @@
     "training_eligible": false,
     "provenance": {
      "source": "NIST Atomic Spectra Database",
-     "file": "data/reference/nist_asd/"
+     "file": "Qiaomu/data/reference/nist_asd/"
     }
    },
    {
@@ -499,7 +499,7 @@
     "training_eligible": false,
     "provenance": {
      "source": "NIST Atomic Spectra Database",
-     "file": "data/reference/nist_asd/"
+     "file": "Qiaomu/data/reference/nist_asd/"
     }
    },
    {
@@ -510,7 +510,7 @@
     "training_eligible": false,
     "provenance": {
      "source": "NIST Atomic Spectra Database",
-     "file": "data/reference/nist_asd/"
+     "file": "Qiaomu/data/reference/nist_asd/"
     }
    },
    {
@@ -521,7 +521,7 @@
     "training_eligible": false,
     "provenance": {
      "source": "NIST Atomic Spectra Database",
-     "file": "data/reference/nist_asd/"
+     "file": "Qiaomu/data/reference/nist_asd/"
     }
    },
    {
@@ -532,7 +532,7 @@
     "training_eligible": false,
     "provenance": {
      "source": "NIST Atomic Spectra Database",
-     "file": "data/reference/nist_asd/"
+     "file": "Qiaomu/data/reference/nist_asd/"
     }
    },
    {
@@ -543,7 +543,7 @@
     "training_eligible": false,
     "provenance": {
      "source": "NIST Atomic Spectra Database",
-     "file": "data/reference/nist_asd/"
+     "file": "Qiaomu/data/reference/nist_asd/"
     }
    },
    {
@@ -554,7 +554,7 @@
     "training_eligible": false,
     "provenance": {
      "source": "NIST Atomic Spectra Database",
-     "file": "data/reference/nist_asd/"
+     "file": "Qiaomu/data/reference/nist_asd/"
     }
    },
    {
@@ -565,7 +565,7 @@
     "training_eligible": false,
     "provenance": {
      "source": "NIST Atomic Spectra Database",
-     "file": "data/reference/nist_asd/"
+     "file": "Qiaomu/data/reference/nist_asd/"
     }
    },
    {
@@ -576,7 +576,7 @@
     "training_eligible": false,
     "provenance": {
      "source": "NIST Atomic Spectra Database",
-     "file": "data/reference/nist_asd/"
+     "file": "Qiaomu/data/reference/nist_asd/"
     }
    },
    {
@@ -587,7 +587,7 @@
     "training_eligible": false,
     "provenance": {
      "source": "NIST Atomic Spectra Database",
-     "file": "data/reference/nist_asd/"
+     "file": "Qiaomu/data/reference/nist_asd/"
     }
    }
   ],

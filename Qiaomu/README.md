@@ -6,8 +6,8 @@ This folder holds my assigned work for the project in [../README.md](../README.m
 
 | Folder | Files | Size | Use it for |
 | --- | --- | --- | --- |
-| [mode_cards_simplified/](mode_cards_simplified/) | `calcite_simplified.json`, `anatase_simplified.json` | ~25 KB | Qwen's context (ARCHITECTURE.md step 4) and quick reading. Sized like the team's cards. |
-| [mode_cards_comprehensive/](mode_cards_comprehensive/) | `calcite.json`, `anatase.json` | ~1 MB | All the literature: every collected paper and every extracted peak. |
+| [mode_cards_simplified/](mode_cards_simplified/) | `calcite.json`, `anatase.json` (default) | ~15 KB | Qwen's context (ARCHITECTURE.md step 4) and quick reading. Sized like the team's cards. **An identical copy is in the repo-root team folder `../mode_cards/`.** |
+| [mode_cards_comprehensive/](mode_cards_comprehensive/) | `calcite_comprehensive.json`, `anatase_comprehensive.json` | ~1 MB | All the literature: every collected paper and every extracted peak. **An identical copy is in `../mode_cards/`.** |
 
 Both versions use the team's schema 2.1 (same layout as the repo-root `mode_cards/mos2.json` and `silicon.json`) and share these sections:
 - `curated_expected_modes`: each Raman-active mode with its symmetry, a one-line description of the atomic motion, and the expected position, **copied from one primary paper**. Each mode also has a `literature_summary` over all collected papers: how many report it, the median and the 10–90% range.
@@ -36,7 +36,8 @@ data/mode_card_sources/instrument_lines.json           Si line + NIST plasma lin
 <material>/papers.csv + peaks/<material>_peaks.csv     all papers and peaks          <- extraction + scripts/merge_peaks.py
         |
         v  scripts/build_mode_cards.py
-mode_cards_comprehensive/<material>.json  ->  mode_cards_simplified/<material>_simplified.json
+mode_cards_comprehensive/<material>_comprehensive.json  ->  ../mode_cards/<material>_comprehensive.json (identical copy)
+mode_cards_simplified/<material>.json                    ->  ../mode_cards/<material>.json (identical copy)
 ```
 
 Rebuild and check, from this folder:
@@ -50,13 +51,13 @@ python -P scripts/build_mode_cards.py
 python -P scripts/validate_project.py --no-pdf
 ```
 
-`validate_project.py` also checks the cards: both versions exist and load, their curated positions equal the checked `primary_v1` values, and every simplified study is in the comprehensive card.
+`validate_project.py` also checks the cards: both versions exist and load, their curated positions equal the checked `primary_v1` values, every simplified study is in the comprehensive card, and the copies in `../mode_cards/` are identical to the ones here. The build writes only `<material>.json` and `<material>_comprehensive.json` (calcite, anatase) in `../mode_cards/`; it never touches the other files there.
 
 ## Folder layout
 
 | Path | What it is |
 | --- | --- |
-| `mode_cards_simplified/`, `mode_cards_comprehensive/` | The two card versions (deliverable). |
+| `mode_cards_simplified/`, `mode_cards_comprehensive/` | The two card versions (deliverable). Both are copied to the repo-root `mode_cards/`: the simplified card as the default `<material>.json`, the comprehensive one as `<material>_comprehensive.json`. |
 | `Architecture Overview.md`, `Sequence of Execution.md` | The team plan, with notes on where the calcite/anatase cards and data fit (step 1 status, test-only calcite data, checker window). |
 | `data/mode_card_sources/` | Inputs of the cards: `primary_v1/` (checked one-paper cards), `CHECK.md`, `instrument_lines.json`. |
 | `data/reference/nist_asd/` | NIST line lists used for the plasma lines. |

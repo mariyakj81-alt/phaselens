@@ -1,5 +1,6 @@
 """Check that the literature dataset hangs together: bibliography, paper folders, PDFs, peak files, status lines,
-and the two versions of the mode cards (mode_cards_simplified/, mode_cards_comprehensive/).
+and the two versions of the mode cards (mode_cards_simplified/<material>.json, mode_cards_comprehensive/
+<material>_comprehensive.json, and their identical copies in the repo-root mode_cards/).
 
 Usage: python -P scripts/validate_project.py [--no-pdf]
 Peak rows themselves are checked by scripts/merge_peaks.py; run both before committing.
@@ -98,8 +99,8 @@ def check_cards(material, problems):
     """Both card versions exist, keep the checked curated positions, and agree with the peak table."""
     add = lambda msg: problems.append((material, "mode card", msg))
     v1 = ROOT / "data" / "mode_card_sources" / "primary_v1" / f"{material}_v1.json"
-    cards = {"simplified": ROOT / "mode_cards_simplified" / f"{material}_simplified.json",
-             "comprehensive": ROOT / "mode_cards_comprehensive" / f"{material}.json"}
+    cards = {"simplified": ROOT / "mode_cards_simplified" / f"{material}.json",
+             "comprehensive": ROOT / "mode_cards_comprehensive" / f"{material}_comprehensive.json"}
     missing = [str(p.relative_to(ROOT)) for p in [v1, *cards.values()] if not p.exists()]
     if missing:
         add(f"missing: {', '.join(missing)}")
@@ -128,6 +129,12 @@ def check_cards(material, problems):
             for p in sp["peaks"]:
                 if (s["paper_id"], sp["sample_id"], p["position_cm-1"], p["mode"]) not in full_peaks:
                     add(f"simplified peak {s['paper_id']} {sp['sample_id']} {p['mode']} {p['position_cm-1']} is not in the comprehensive card")
+    for path in cards.values():  # identical copies in the repo-root team folder
+        team = ROOT.parent / "mode_cards" / path.name
+        if not team.exists():
+            add(f"team copy ../mode_cards/{team.name} is missing (rerun scripts/build_mode_cards.py)")
+        elif team.read_bytes() != path.read_bytes():
+            add(f"team copy ../mode_cards/{team.name} differs from {path.parent.name}/{path.name} (rerun scripts/build_mode_cards.py)")
     print(f"{material} mode cards: simplified {len(simple['studies'])} studies, comprehensive {len(full['studies'])} studies / {n_peaks} peaks")
 
 

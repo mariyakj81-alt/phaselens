@@ -9,7 +9,7 @@
       "space_group_number": 167,
       "point_group": "-3m",
       "spglib_verified": true,
-      "cif": "structures/calcite.cif",
+      "cif": "Qiaomu/structures/calcite.cif",
       "cod_id": "9000965"
     },
     "literature_symmetry_table": {
@@ -223,7 +223,7 @@
         "training_eligible": false,
         "provenance": {
           "source": "NIST Atomic Spectra Database",
-          "file": "data/reference/nist_asd/"
+          "file": "Qiaomu/data/reference/nist_asd/"
         }
       },
       {
@@ -234,7 +234,7 @@
         "training_eligible": false,
         "provenance": {
           "source": "NIST Atomic Spectra Database",
-          "file": "data/reference/nist_asd/"
+          "file": "Qiaomu/data/reference/nist_asd/"
         }
       },
       {
@@ -245,7 +245,7 @@
         "training_eligible": false,
         "provenance": {
           "source": "NIST Atomic Spectra Database",
-          "file": "data/reference/nist_asd/"
+          "file": "Qiaomu/data/reference/nist_asd/"
         }
       },
       {
@@ -256,7 +256,7 @@
         "training_eligible": false,
         "provenance": {
           "source": "NIST Atomic Spectra Database",
-          "file": "data/reference/nist_asd/"
+          "file": "Qiaomu/data/reference/nist_asd/"
         }
       },
       {
@@ -267,7 +267,7 @@
         "training_eligible": false,
         "provenance": {
           "source": "NIST Atomic Spectra Database",
-          "file": "data/reference/nist_asd/"
+          "file": "Qiaomu/data/reference/nist_asd/"
         }
       },
       {
@@ -278,7 +278,7 @@
         "training_eligible": false,
         "provenance": {
           "source": "NIST Atomic Spectra Database",
-          "file": "data/reference/nist_asd/"
+          "file": "Qiaomu/data/reference/nist_asd/"
         }
       },
       {
@@ -289,7 +289,7 @@
         "training_eligible": false,
         "provenance": {
           "source": "NIST Atomic Spectra Database",
-          "file": "data/reference/nist_asd/"
+          "file": "Qiaomu/data/reference/nist_asd/"
         }
       },
       {
@@ -300,7 +300,7 @@
         "training_eligible": false,
         "provenance": {
           "source": "NIST Atomic Spectra Database",
-          "file": "data/reference/nist_asd/"
+          "file": "Qiaomu/data/reference/nist_asd/"
         }
       }
     ]
@@ -484,320 +484,6 @@
         }
       ],
       "training_eligible": true
-    },
-    {
-      "paper_id": "CAL010",
-      "doi": "10.1063/1.4871900",
-      "citation": "Marco De La Pierre et al., The Journal of Chemical Physics (2014). The Raman spectrum of CaCO3 polymorphs calcite and aragonite: A combined experimental and computational study",
-      "source": "https://doi.org/10.1063/1.4871900",
-      "source_verified": true,
-      "sample": {
-        "phase": "calcite",
-        "orientation": null,
-        "confounders": [
-          "temperature"
-        ]
-      },
-      "conditions": {
-        "laser_wavelength_nm": null,
-        "laser_power_mw": null,
-        "temperature": null,
-        "room_temperature_confirmed": null,
-        "wavenumber_calibration": null,
-        "instrument_resolution_cm-1": null,
-        "substrate": null
-      },
-      "spectra": [
-        {
-          "sample_id": "xtal_300K",
-          "sample_description": "single crystal calcite, polarized Raman (experimental columns of calc-vs-exp tables)",
-          "peaks": [
-            {
-              "position_cm-1": 155.4,
-              "position_uncertainty_cm-1": null,
-              "height": null,
-              "height_units": null,
-              "fwhm_cm-1": 6.0,
-              "mode": "Eg(T)",
-              "symmetry": "Eg",
-              "raman_activity": "active",
-              "phase": "calcite",
-              "training_eligible": true,
-              "value_type": "reported",
-              "assignment_source": "paper",
-              "provenance": {
-                "page": 2,
-                "figure_or_table": "SI Table S1 (p.2)"
-              }
-            },
-            {
-              "position_cm-1": 282.0,
-              "position_uncertainty_cm-1": null,
-              "height": null,
-              "height_units": null,
-              "fwhm_cm-1": 9.3,
-              "mode": "Eg(L)",
-              "symmetry": "Eg",
-              "raman_activity": "active",
-              "phase": "calcite",
-              "training_eligible": true,
-              "value_type": "reported",
-              "assignment_source": "paper",
-              "provenance": {
-                "page": 2,
-                "figure_or_table": "SI Table S1 (p.2)"
-              }
-            },
-            {
-              "position_cm-1": 712.5,
-              "position_uncertainty_cm-1": null,
-              "height": null,
-              "height_units": null,
-              "fwhm_cm-1": 2.9,
-              "mode": "nu4",
-              "symmetry": "Eg",
-              "raman_activity": "active",
-              "phase": "calcite",
-              "training_eligible": true,
-              "value_type": "reported",
-              "assignment_source": "paper",
-              "provenance": {
-                "page": 2,
-                "figure_or_table": "SI Table S1 (p.2)"
-              }
-            },
-            {
-              "position_cm-1": 1066.8,
-              "position_uncertainty_cm-1": null,
-              "height": null,
-              "height_units": null,
-              "fwhm_cm-1": 1.7,
-              "mode": "nu1(13C)",
-              "symmetry": "A1g",
-              "raman_activity": "active",
-              "phase": "calcite",
-              "training_eligible": true,
-              "value_type": "reported",
-              "assignment_source": "reference",
-              "provenance": {
-                "page": 2,
-                "figure_or_table": "SI Table S1 (p.2)"
-              }
-            },
-            {
-              "position_cm-1": 1086.5,
-              "position_uncertainty_cm-1": null,
-              "height": null,
-              "height_units": null,
-              "fwhm_cm-1": 1.8,
-              "mode": "nu1",
-              "symmetry": "A1g",
-              "raman_activity": "active",
-              "phase": "calcite",
-              "training_eligible": true,
-              "value_type": "reported",
-              "assignment_source": "paper",
-              "provenance": {
-                "page": 2,
-                "figure_or_table": "SI Table S1 (p.2)"
-              }
-            },
-            {
-              "position_cm-1": 1436.5,
-              "position_uncertainty_cm-1": null,
-              "height": null,
-              "height_units": null,
-              "fwhm_cm-1": 3.8,
-              "mode": "nu3",
-              "symmetry": "Eg",
-              "raman_activity": "active",
-              "phase": "calcite",
-              "training_eligible": true,
-              "value_type": "reported",
-              "assignment_source": "paper",
-              "provenance": {
-                "page": 2,
-                "figure_or_table": "SI Table S1 (p.2)"
-              }
-            },
-            {
-              "position_cm-1": 1749.2,
-              "position_uncertainty_cm-1": null,
-              "height": null,
-              "height_units": null,
-              "fwhm_cm-1": 6.6,
-              "mode": "2nu2",
-              "symmetry": "overtone",
-              "raman_activity": "second-order",
-              "phase": "calcite",
-              "training_eligible": true,
-              "value_type": "reported",
-              "assignment_source": "reference",
-              "provenance": {
-                "page": 2,
-                "figure_or_table": "SI Table S1 (p.2)"
-              }
-            }
-          ]
-        }
-      ],
-      "training_eligible": true
-    },
-    {
-      "paper_id": "CAL030",
-      "doi": "10.1177/00037028251330654",
-      "citation": "Dirk Lellinger et al., Applied Spectroscopy (2025). Interlaboratory Study to Minimize Wavelength Calibration Uncertainty Due to Peak Fitting of Reference Material Spectra in Raman Spectroscopy",
-      "source": "https://doi.org/10.1177/00037028251330654",
-      "source_verified": true,
-      "sample": {
-        "phase": "calcite",
-        "orientation": null,
-        "confounders": []
-      },
-      "conditions": {
-        "laser_wavelength_nm": 785,
-        "laser_power_mw": null,
-        "temperature": null,
-        "room_temperature_confirmed": null,
-        "wavenumber_calibration": null,
-        "instrument_resolution_cm-1": null,
-        "substrate": null
-      },
-      "spectra": [
-        {
-          "sample_id": "S10",
-          "sample_description": "certified calcite reference material (ELODIZ, sCal) on system S10785: Renishaw inVia Reflex, moving grating",
-          "peaks": [
-            {
-              "position_cm-1": 155.04,
-              "position_uncertainty_cm-1": 0.01,
-              "height": 0.098,
-              "height_units": "relative to strongest mode of this spectrum",
-              "fwhm_cm-1": 7.64,
-              "mode": "Eg(T)",
-              "symmetry": "Eg",
-              "raman_activity": "active",
-              "phase": "calcite",
-              "training_eligible": true,
-              "value_type": "fitted_from_deposited_spectrum",
-              "assignment_source": "reference",
-              "provenance": {
-                "page": null,
-                "figure_or_table": "Zenodo 10.5281/zenodo.13387413 peak_fitting_spectra.nxs, entry 'Figure5and6 (Calcite) S10'"
-              }
-            },
-            {
-              "position_cm-1": 281.86,
-              "position_uncertainty_cm-1": 0.02,
-              "height": 0.262,
-              "height_units": "relative to strongest mode of this spectrum",
-              "fwhm_cm-1": 9.93,
-              "mode": "Eg(L)",
-              "symmetry": "Eg",
-              "raman_activity": "active",
-              "phase": "calcite",
-              "training_eligible": true,
-              "value_type": "fitted_from_deposited_spectrum",
-              "assignment_source": "reference",
-              "provenance": {
-                "page": null,
-                "figure_or_table": "Zenodo 10.5281/zenodo.13387413 peak_fitting_spectra.nxs, entry 'Figure5and6 (Calcite) S10'"
-              }
-            },
-            {
-              "position_cm-1": 712.75,
-              "position_uncertainty_cm-1": 0.01,
-              "height": 0.1,
-              "height_units": "relative to strongest mode of this spectrum",
-              "fwhm_cm-1": 5.07,
-              "mode": "nu4",
-              "symmetry": "Eg",
-              "raman_activity": "active",
-              "phase": "calcite",
-              "training_eligible": true,
-              "value_type": "fitted_from_deposited_spectrum",
-              "assignment_source": "reference",
-              "provenance": {
-                "page": null,
-                "figure_or_table": "Zenodo 10.5281/zenodo.13387413 peak_fitting_spectra.nxs, entry 'Figure5and6 (Calcite) S10'"
-              }
-            },
-            {
-              "position_cm-1": 1067.42,
-              "position_uncertainty_cm-1": 0.49,
-              "height": 0.006,
-              "height_units": "relative to strongest mode of this spectrum",
-              "fwhm_cm-1": 4.06,
-              "mode": "nu1(13C)",
-              "symmetry": "A1g",
-              "raman_activity": "active",
-              "phase": "calcite",
-              "training_eligible": true,
-              "value_type": "fitted_from_deposited_spectrum",
-              "assignment_source": "reference",
-              "provenance": {
-                "page": null,
-                "figure_or_table": "Zenodo 10.5281/zenodo.13387413 peak_fitting_spectra.nxs, entry 'Figure5and6 (Calcite) S10'"
-              }
-            },
-            {
-              "position_cm-1": 1087.16,
-              "position_uncertainty_cm-1": 0.0,
-              "height": 1.0,
-              "height_units": "relative to strongest mode of this spectrum",
-              "fwhm_cm-1": 4.13,
-              "mode": "nu1",
-              "symmetry": "A1g",
-              "raman_activity": "active",
-              "phase": "calcite",
-              "training_eligible": true,
-              "value_type": "fitted_from_deposited_spectrum",
-              "assignment_source": "reference",
-              "provenance": {
-                "page": null,
-                "figure_or_table": "Zenodo 10.5281/zenodo.13387413 peak_fitting_spectra.nxs, entry 'Figure5and6 (Calcite) S10'"
-              }
-            },
-            {
-              "position_cm-1": 1437.27,
-              "position_uncertainty_cm-1": 0.05,
-              "height": 0.017,
-              "height_units": "relative to strongest mode of this spectrum",
-              "fwhm_cm-1": 5.31,
-              "mode": "nu3",
-              "symmetry": "Eg",
-              "raman_activity": "active",
-              "phase": "calcite",
-              "training_eligible": true,
-              "value_type": "fitted_from_deposited_spectrum",
-              "assignment_source": "reference",
-              "provenance": {
-                "page": null,
-                "figure_or_table": "Zenodo 10.5281/zenodo.13387413 peak_fitting_spectra.nxs, entry 'Figure5and6 (Calcite) S10'"
-              }
-            },
-            {
-              "position_cm-1": 1750.91,
-              "position_uncertainty_cm-1": 0.1,
-              "height": 0.01,
-              "height_units": "relative to strongest mode of this spectrum",
-              "fwhm_cm-1": 7.69,
-              "mode": "2nu2",
-              "symmetry": "overtone",
-              "raman_activity": "second-order",
-              "phase": "calcite",
-              "training_eligible": true,
-              "value_type": "fitted_from_deposited_spectrum",
-              "assignment_source": "reference",
-              "provenance": {
-                "page": null,
-                "figure_or_table": "Zenodo 10.5281/zenodo.13387413 peak_fitting_spectra.nxs, entry 'Figure5and6 (Calcite) S10'"
-              }
-            }
-          ]
-        }
-      ],
-      "training_eligible": true
     }
   ],
   "cross_paper_summary": {
@@ -833,7 +519,7 @@
     "spectrometer calibration offsets"
   ],
   "dataset_notes": [
-    "Simplified card: 3 representative studies. The full card with every paper (67 studies) is Qiaomu/mode_cards_comprehensive/calcite.json.",
+    "Simplified card: one study, the most trusted paper (the checked primary source of curated_expected_modes). The comprehensive card with every paper (67 studies) is Qiaomu/mode_cards_comprehensive/calcite_comprehensive.json.",
     "literature_summary in each curated mode is computed over all papers in the full card.",
     "curated_expected_modes come from one primary paper (Bischoff, W. D., Sharma, S. K., Mackenzie, F. T. (1985) Carbonate ion disorder in synthetic and biogenic magnesian calcites: a Raman spectral study. American Mineralogist 70, 581-589.), checked number by number (Qiaomu/data/mode_card_sources/CHECK.md); human teammate sign-off pending."
   ]
