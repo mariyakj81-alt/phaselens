@@ -23,3 +23,18 @@ scripts/*_search*/**/*.txt
 scripts/*_search*/*.json
 scripts/*_search*/*.log
 scripts/*_search*/*.txt
+
+# Personal workspace paths (already-tracked files stay in the repo; this applies to new files)
+/mos2/
+/data/
+/quartz/
+/scripts/
+/silicon/
+/structures/
+/Architecture Overview.md
+/README.md
+/Sequence of Execution.md
+/feedback.md
+/history.md
+/memory.md
+/requirements.txt
