@@ -6,8 +6,8 @@ This folder holds my assigned work for the project in [../README.md](../README.m
 
 | File | Source paper | Status |
 | --- | --- | --- |
-| [data/mode_cards/calcite.json](data/mode_cards/calcite.json) | Bischoff, Sharma & Mackenzie 1985, Am. Mineral. 70, 581, Table 1 (488 nm) | See the `check` block and [CHECK.md](data/mode_cards/CHECK.md) |
-| [data/mode_cards/anatase.json](data/mode_cards/anatase.json) | Ishioka et al. 2012, Phys. Rev. B 86, 205201, Table I (natural crystal, 532 nm) | See the `check` block and [CHECK.md](data/mode_cards/CHECK.md) |
+| [data/mode_cards/calcite.json](data/mode_cards/calcite.json) | Bischoff, Sharma & Mackenzie 1985, Am. Mineral. 70, 581, Table 1 (488 nm) | Checked by agent, human sign-off pending: [CHECK.md](data/mode_cards/CHECK.md) |
+| [data/mode_cards/anatase.json](data/mode_cards/anatase.json) | Ishioka et al. 2012, Phys. Rev. B 86, 205201, Table I (natural crystal, 532 nm) | Checked by agent, human sign-off pending: [CHECK.md](data/mode_cards/CHECK.md) |
 | [data/mode_cards/instrument_lines.json](data/mode_cards/instrument_lines.json) | NIST Atomic Spectra Database (laser plasma lines), Si line | Built by `scripts/build_instrument_lines.py` |
 
 Both cards use the team's schema 2.1 (same layout as `../mode_cards/mos2.json` and `silicon.json`) and are built by `scripts/build_mode_cards.py`:
@@ -17,9 +17,9 @@ Both cards use the team's schema 2.1 (same layout as `../mode_cards/mos2.json` a
 
 Each card is about 1 MB because of `studies`. For the Qwen prompt (ARCHITECTURE.md step 4) pass only `curated_expected_modes`, `symmetry_validation` and `artifact_lines`.
 
-**Done when** (SEQUENCE step 1): a teammate has checked every number against the paper. A checker agent has compared every number. A human teammate still needs to sign off: open each card's `check.how` instructions and the two source PDFs.
+**Done when** (SEQUENCE step 1): a teammate has checked every number against the paper. A checker agent has compared every number. A human teammate still needs to sign off: compare `curated_expected_modes` with the two source tables (instructions in CHECK.md).
 
-**Valency:** the README says to use Valency to find the paper. Valency is blocked by organization policy in the tools I used, so the source papers came from OpenAlex, Europe PMC, Crossref and web search. If you prefer a Valency-found paper, swap the numbers and the `source_paper` block.
+**Valency:** the README says to use Valency to find the paper. Valency is blocked by organization policy in the tools I used, so the source papers came from OpenAlex, Europe PMC, Crossref and web search. If you prefer a Valency-found paper, change `primary_v1/` and rerun `scripts/build_mode_cards.py`.
 
 ## Supporting data
 
