@@ -1,0 +1,58 @@
+# Project-level ignore rules for the Raman mode-assignment project.
+# Folder-specific rules live next to the folder (e.g. Qiaomu/.gitignore keeps downloaded papers out).
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# --- Virtual environments ---
+.venv/
+venv/
+env/
+.conda/
+
+# --- marimo ---
+__marimo__/
+.marimo/
+
+# --- Secrets and local config (API keys for Hugging Face, Adaption, etc.) ---
+.env
+.env.*
+!.env.example
+*.key
+*token*.txt
+
+# --- Model weights and caches (Qwen, fine-tuned checkpoints): download, don't commit ---
+*.safetensors
+*.gguf
+*.pt
+*.pth
+*.ckpt
+*.onnx
+models/
+checkpoints/
+.cache/
+hf_cache/
+wandb/
+
+# --- Logs and run outputs ---
+*.log
+runs/
+outputs/
+
+# --- OS, Google Drive and editor files ---
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
+*.tmp
+.tmp.drivedownload/
+.tmp.driveupload/
+.vscode/
+.idea/
+*.swp

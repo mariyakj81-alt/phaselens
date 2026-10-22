@@ -1,0 +1,9 @@
+pybaselines
+scipy
+numpy
+pandas
+matplotlib
+openpyxl
+pymupdf
+spglib
+ase

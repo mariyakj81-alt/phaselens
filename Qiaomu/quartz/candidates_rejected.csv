@@ -1,0 +1,6 @@
+doi,title,reason
+10.1103/PhysRevB.35.8316,High-pressure Raman study of the vibrational modes in AlPO4 and SiO2 (alpha-quartz),"needs_manual: Jayaraman, Wood and Maines, PRB 35, 8316 (1987); APS paywall, repository.ias.ac.in record gave 404, no open copy found"
+10.1103/PhysRev.161.903,Long-wavelength optical phonons in quartz,"not retrieved: Scott and Porto, Phys. Rev. 161, 903 (1967), the classic polarized single-crystal A1/E TO/LO table; APS paywall, no open copy found by web search"
+,"DTIC report AD0658342 (title not retrieved; search snippet: four A1 modes near 207, 355, 466, 1081 cm-1 and eight E modes)",needs_manual: apps.dtic.mil/sti/pdfs/AD0658342.pdf answered 403 to a scripted request; not retried
+,Ab initio studies of phonon softening and high pressure phase transitions of alpha-quartz SiO2 (arXiv:cond-mat/0601489),"downloaded and read (Choudhury and Chaplot); calculated TO/LO and A1 frequencies vs pressure with group-theory labels, no measured ambient frequencies; Umari 2001 gives a cleaner calculated-vs-experiment table"
+10.1103/PhysRevB.63.094305,Raman scattering intensities in alpha-quartz: A first-principles investigation,cross-check only (theory paper quoting Masso 1970 experiment); not used: one source per card

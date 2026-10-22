@@ -1,0 +1,198 @@
+{
+  "material": "calcite",
+  "formula": "CaCO3",
+  "point_group": "D3d",
+  "point_group_status": "Confirmed with spglib on structures/calcite.cif (COD 9000965, Markgraf & Reeder (1985) Am. Mineral. 70, 590-600): R-3c, No. 167, point group -3m: matches this card",
+  "space_group": "R-3c (No. 167)",
+  "citation": {
+    "primary": "Bischoff, W. D., Sharma, S. K., Mackenzie, F. T. (1985) Carbonate ion disorder in synthetic and biogenic magnesian calcites: a Raman spectral study. American Mineralogist 70, 581-589.",
+    "url": "http://www.minsocam.org/ammin/AM70/AM70_581.pdf",
+    "paper_id": "CAL003",
+    "table_used": "Table 1 (p.584), row 'Calcite' (pure synthetic calcite)",
+    "laser_nm": 488,
+    "how_found": "OpenAlex / web search (Valency was blocked by organization policy)"
+  },
+  "position_note": "position_cm1 is copied from the paper's table (spontaneous Raman, room temperature).",
+  "modes": [
+    {
+      "id": "Eg(T)",
+      "symmetry": "Eg",
+      "degeneracy": 2,
+      "position_cm1": 154,
+      "halfwidth_cm1": 6.2,
+      "paper_label": "T",
+      "motion": "external lattice mode: translation of CO3 groups against the Ca ions",
+      "raman_active": true,
+      "branch": null
+    },
+    {
+      "id": "Eg(L)",
+      "symmetry": "Eg",
+      "degeneracy": 2,
+      "position_cm1": 281,
+      "halfwidth_cm1": 10.1,
+      "paper_label": "L",
+      "motion": "external lattice mode: libration (rocking) of the CO3 groups",
+      "raman_active": true,
+      "branch": null
+    },
+    {
+      "id": "nu4",
+      "symmetry": "Eg",
+      "degeneracy": 2,
+      "position_cm1": 711,
+      "halfwidth_cm1": 3.6,
+      "paper_label": "v4",
+      "motion": "in-plane O-C-O bending of the carbonate ion",
+      "raman_active": true,
+      "branch": null
+    },
+    {
+      "id": "nu1",
+      "symmetry": "A1g",
+      "degeneracy": 1,
+      "position_cm1": 1085,
+      "halfwidth_cm1": 2.5,
+      "paper_label": "v1",
+      "motion": "symmetric C-O stretching of the carbonate ion; the strongest band",
+      "raman_active": true,
+      "branch": null
+    },
+    {
+      "id": "nu3",
+      "symmetry": "Eg",
+      "degeneracy": 2,
+      "position_cm1": 1434,
+      "halfwidth_cm1": 2.0,
+      "paper_label": "v3",
+      "motion": "antisymmetric C-O stretching of the carbonate ion",
+      "raman_active": true,
+      "branch": null
+    },
+    {
+      "id": "2nu2",
+      "symmetry": "overtone (A1g component of 2 x A2u)",
+      "degeneracy": null,
+      "position_cm1": 1748,
+      "halfwidth_cm1": 3.6,
+      "paper_label": "2 x v2",
+      "motion": "overtone of the out-of-plane carbonate bend nu2; second order, weak",
+      "raman_active": true,
+      "branch": null
+    }
+  ],
+  "silent_note": "Factor-group analysis of D3d with Z = 2: optical modes = A1g + 4Eg (Raman) + 3A2u + 5Eu (IR only) + 3A2g + 2A1u (inactive). None of these may be used as a Raman label.",
+  "silent_modes": [
+    {
+      "id": "A2u_1",
+      "symmetry": "A2u",
+      "position_cm1": null,
+      "reason": "infrared-only in D3d, Raman-silent; includes nu2, out-of-plane carbonate bend (its overtone appears as 2nu2 above)"
+    },
+    {
+      "id": "A2u_2",
+      "symmetry": "A2u",
+      "position_cm1": null,
+      "reason": "infrared-only in D3d, Raman-silent"
+    },
+    {
+      "id": "A2u_3",
+      "symmetry": "A2u",
+      "position_cm1": null,
+      "reason": "infrared-only in D3d, Raman-silent"
+    },
+    {
+      "id": "Eu_1",
+      "symmetry": "Eu",
+      "position_cm1": null,
+      "reason": "infrared-only in D3d, Raman-silent; includes IR components of nu3, nu4 and lattice modes"
+    },
+    {
+      "id": "Eu_2",
+      "symmetry": "Eu",
+      "position_cm1": null,
+      "reason": "infrared-only in D3d, Raman-silent"
+    },
+    {
+      "id": "Eu_3",
+      "symmetry": "Eu",
+      "position_cm1": null,
+      "reason": "infrared-only in D3d, Raman-silent"
+    },
+    {
+      "id": "Eu_4",
+      "symmetry": "Eu",
+      "position_cm1": null,
+      "reason": "infrared-only in D3d, Raman-silent"
+    },
+    {
+      "id": "Eu_5",
+      "symmetry": "Eu",
+      "position_cm1": null,
+      "reason": "infrared-only in D3d, Raman-silent"
+    },
+    {
+      "id": "A2g_1",
+      "symmetry": "A2g",
+      "position_cm1": null,
+      "reason": "inactive in both Raman and IR (D3d)"
+    },
+    {
+      "id": "A2g_2",
+      "symmetry": "A2g",
+      "position_cm1": null,
+      "reason": "inactive in both Raman and IR (D3d)"
+    },
+    {
+      "id": "A2g_3",
+      "symmetry": "A2g",
+      "position_cm1": null,
+      "reason": "inactive in both Raman and IR (D3d)"
+    },
+    {
+      "id": "A1u_1",
+      "symmetry": "A1u",
+      "position_cm1": null,
+      "reason": "inactive in both Raman and IR (D3d)"
+    },
+    {
+      "id": "A1u_2",
+      "symmetry": "A1u",
+      "position_cm1": null,
+      "reason": "inactive in both Raman and IR (D3d)"
+    }
+  ],
+  "instrument_lines": [
+    {
+      "name": "silicon substrate",
+      "position_cm1": 520.7,
+      "label": "artifact",
+      "source": "standard Si F2g line; data/mode_card_sources/instrument_lines.json"
+    },
+    {
+      "name": "laser (Rayleigh) line",
+      "position_cm1": 0.0,
+      "label": "artifact",
+      "source": "laser line, seen when data start below the edge filter"
+    },
+    {
+      "name": "laser plasma lines",
+      "position_cm1": null,
+      "label": "artifact",
+      "source": "see data/mode_card_sources/instrument_lines.json (Ar+ 488/514.5, He-Ne 632.8, Kr+ 647.1 nm; none for 532, 785, 1064 nm). All are labelled 'artifact'."
+    }
+  ],
+  "notes": [
+    "Positions are copied from the source paper and are integers as printed. Bischoff et al. give the band frequency (upper value) and 'halfwidth' (lower value) in Table 1; halfwidth_cm1 is that printed value (older papers usually mean the full width at half maximum by 'halfwidth').",
+    "Literature spread over this project's calcite papers (Qiaomu/peaks/calcite_peaks.csv) is a few cm-1 per mode; Mg substitution shifts every band upward.",
+    "Calcite is the held-out test material in this project (README.md)."
+  ],
+  "to_verify": [
+    "Compare every position_cm1, halfwidth_cm1 and paper_label with Table 1 of the source PDF (calcite/CAL003_Bischoff1985/paper.pdf)."
+  ],
+  "check": {
+    "status": "checked by agent; human teammate sign-off pending",
+    "checked_by": "checker agent (Claude), 2026-10-21",
+    "how": "Compare every position_cm1, halfwidth_cm1 and paper_label with Table 1 of the source PDF (calcite/CAL003_Bischoff1985/paper.pdf)."
+  }
+}

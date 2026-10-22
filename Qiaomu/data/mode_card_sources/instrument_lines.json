@@ -1,0 +1,209 @@
+{
+  "_note": "Gas lasers leak emission lines of their discharge. Without a clean-up filter these show up in a Raman spectrum as narrow peaks at fixed Raman shifts, the \"laser-plasma lines\" of ARCHITECTURE.md. Line wavelengths come from the NIST Atomic Spectra Database (air wavelengths, saved in data/reference/nist_asd/). Raman shift = 1e7/laser_nm - 1e7/line_nm. NIST intensities rank lines within one spectrum only; which lines are strong in a given laser tube varies, so treat the list as candidates.",
+  "source": "NIST Atomic Spectra Database, https://physics.nist.gov/asd (air wavelengths)",
+  "silicon_line": {
+    "position_cm1": 520.7,
+    "label": "artifact",
+    "note": "first-order Si optical phonon (F2g) from a Si or SiO2/Si substrate; see the team silicon card (repo-root mode_cards/silicon.json) for its source"
+  },
+  "laser_line": {
+    "position_cm1": 0.0,
+    "label": "artifact",
+    "note": "Rayleigh line, seen when data start below the edge/notch filter"
+  },
+  "plasma_lines": {
+    "Ar+ 488.0 nm": {
+      "laser_nm_air": 487.986,
+      "gas_spectrum": "Ar II",
+      "label": "artifact",
+      "lines": [
+        {
+          "raman_shift_cm1": 104.0,
+          "line_nm_air": 490.475,
+          "nist_intensity": 107.0
+        },
+        {
+          "raman_shift_cm1": 221.6,
+          "line_nm_air": 493.321,
+          "nist_intensity": 251.0
+        },
+        {
+          "raman_shift_cm1": 351.7,
+          "line_nm_air": 496.508,
+          "nist_intensity": 891.0
+        },
+        {
+          "raman_shift_cm1": 529.7,
+          "line_nm_air": 500.933,
+          "nist_intensity": 355.0
+        },
+        {
+          "raman_shift_cm1": 560.8,
+          "line_nm_air": 501.716,
+          "nist_intensity": 7413.0
+        },
+        {
+          "raman_shift_cm1": 737.5,
+          "line_nm_air": 506.204,
+          "nist_intensity": 398.0
+        },
+        {
+          "raman_shift_cm1": 1043.9,
+          "line_nm_air": 514.178,
+          "nist_intensity": 224.0
+        },
+        {
+          "raman_shift_cm1": 1057.2,
+          "line_nm_air": 514.531,
+          "nist_intensity": 162.0
+        }
+      ]
+    },
+    "Ar+ 514.5 nm": {
+      "laser_nm_air": 514.532,
+      "gas_spectrum": "Ar II",
+      "label": "artifact",
+      "lines": [
+        {
+          "raman_shift_cm1": 76.9,
+          "line_nm_air": 516.577,
+          "nist_intensity": 48.0
+        },
+        {
+          "raman_shift_cm1": 116.1,
+          "line_nm_air": 517.623,
+          "nist_intensity": 26.0
+        },
+        {
+          "raman_shift_cm1": 266.3,
+          "line_nm_air": 521.681,
+          "nist_intensity": 28.0
+        },
+        {
+          "raman_shift_cm1": 501.6,
+          "line_nm_air": 528.163,
+          "nist_intensity": 21.0
+        },
+        {
+          "raman_shift_cm1": 520.4,
+          "line_nm_air": 528.689,
+          "nist_intensity": 18.0
+        },
+        {
+          "raman_shift_cm1": 908.1,
+          "line_nm_air": 539.752,
+          "nist_intensity": 35.0
+        },
+        {
+          "raman_shift_cm1": 941.8,
+          "line_nm_air": 540.734,
+          "nist_intensity": 24.0
+        },
+        {
+          "raman_shift_cm1": 1430.2,
+          "line_nm_air": 555.402,
+          "nist_intensity": 29.0
+        }
+      ]
+    },
+    "He-Ne 632.8 nm": {
+      "laser_nm_air": 632.816,
+      "gas_spectrum": "Ne I",
+      "label": "artifact",
+      "lines": [
+        {
+          "raman_shift_cm1": 135.7,
+          "line_nm_air": 638.299,
+          "nist_intensity": 10000.0
+        },
+        {
+          "raman_shift_cm1": 182.9,
+          "line_nm_air": 640.225,
+          "nist_intensity": 20000.0
+        },
+        {
+          "raman_shift_cm1": 433.2,
+          "line_nm_air": 650.653,
+          "nist_intensity": 15000.0
+        },
+        {
+          "raman_shift_cm1": 648.5,
+          "line_nm_air": 659.895,
+          "nist_intensity": 10000.0
+        },
+        {
+          "raman_shift_cm1": 1371.3,
+          "line_nm_air": 692.947,
+          "nist_intensity": 100000.0
+        },
+        {
+          "raman_shift_cm1": 1565.6,
+          "line_nm_air": 702.405,
+          "nist_intensity": 34000.0
+        },
+        {
+          "raman_shift_cm1": 1582.5,
+          "line_nm_air": 703.241,
+          "nist_intensity": 85000.0
+        },
+        {
+          "raman_shift_cm1": 1863.0,
+          "line_nm_air": 717.394,
+          "nist_intensity": 77000.0
+        }
+      ]
+    },
+    "Kr+ 647.1 nm": {
+      "laser_nm_air": 647.088,
+      "gas_spectrum": "Kr II",
+      "label": "artifact",
+      "lines": [
+        {
+          "raman_shift_cm1": 95.1,
+          "line_nm_air": 651.096,
+          "nist_intensity": 100
+        },
+        {
+          "raman_shift_cm1": 233.3,
+          "line_nm_air": 657.008,
+          "nist_intensity": 150
+        },
+        {
+          "raman_shift_cm1": 668.9,
+          "line_nm_air": 676.363,
+          "nist_intensity": 100
+        },
+        {
+          "raman_shift_cm1": 670.6,
+          "line_nm_air": 676.443,
+          "nist_intensity": 80
+        },
+        {
+          "raman_shift_cm1": 1317.5,
+          "line_nm_air": 707.398,
+          "nist_intensity": 60
+        },
+        {
+          "raman_shift_cm1": 1448.3,
+          "line_nm_air": 714.001,
+          "nist_intensity": 60
+        },
+        {
+          "raman_shift_cm1": 1590.3,
+          "line_nm_air": 721.316,
+          "nist_intensity": 250
+        },
+        {
+          "raman_shift_cm1": 1736.1,
+          "line_nm_air": 728.982,
+          "nist_intensity": 400
+        }
+      ]
+    }
+  },
+  "lasers_without_plasma_lines": {
+    "DPSS 532 nm": 532.0,
+    "diode 785 nm": 785.0,
+    "Nd:YAG 1064 nm (FT-Raman)": 1064.0
+  }
+}
